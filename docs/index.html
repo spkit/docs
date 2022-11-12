@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signal Processing Toolkit - Documentation! &#8212; SpKit</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/css/basic.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within SpKit"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/spkitlogo7.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Signal Processing ToolKit documentation!" href="index2.html" />
+    <link rel="prev" title="Contacts" href="contacts.html" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SpKit &#8212; Signal Processing Toolkit</title>
+<link rel="stylesheet" href="../_static/css/nature1.css" type="text/css" />
+<link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+<link rel="stylesheet" href="../_static/css/gallery.css" type="text/css" />
+<script type="text/javascript" id="documentation_options" data-url_root="./" src="../_static/js/documentation_options.js"></script>
+<script type="text/javascript" src="../_static/js/jquery.js"></script>
+<script type="text/javascript" src="../_static/js/underscore.js"></script>
+<script type="text/javascript" src="../_static/js/doctools.js"></script>
+<script type="text/javascript" src="../_static/js/copybutton.js"></script>
+<link rel="shortcut icon" href="../_static/logo/spkit.ico"/>
+<meta content="True" name="HandheldFriendly">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="keywords" content="signal processing, machine learning, wavelet analysis, information theory">
+
+<script type="text/javascript">
+  function updateTopMenuPosition(height, width) {
+        if($(window).scrollTop() > height && $(window).outerWidth() > 1024) {
+            //begin to scroll
+            $('.related-wrapper').css("z-index", 1000)
+            $('.related-wrapper').css("position", "sticky")
+            $('.related-wrapper').css("top", 0)
+            $('.related-wrapper').css("width", width)
+        } else {
+            //lock it back into place
+            $('.related-wrapper').css("position", "relative")
+            $('.related-wrapper').css("top", 0)
+        }
+    }
+
+    $(function() {
+        var banner_height = $('#logo-banner').outerHeight()
+        var banner_width = $('#logo-banner').outerWidth()
+        var width = $('.related-wrapper').css("height", $('.related').outerHeight())
+
+        updateTopMenuPosition(banner_height, width)
+
+        $(window).scroll(function(event) {
+            updateTopMenuPosition(banner_height, width)
+        });
+
+        $(window).resize(function(event) {
+            var banner_width = $('#logo-banner').outerWidth()
+            var menu_height = $('.related').outerHeight()
+            $('.related').css("width", banner_width)
+            $('.related-wrapper').css("height", menu_height)
+            updateTopMenuPosition(banner_height, width)
+        })
+    });
+
+    </script>
+
+<script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+  (function($) {
+      $(function() {
+    $('.jcarousel').jcarousel();
+          $('.jcarousel-control-prev')
+              .on('active.jcarouselcontrol', function() {
+                  $(this).removeClass('inactive');
+              })
+              .on('inactive.jcarouselcontrol', function() {
+                  $(this).addClass('inactive');
+              })
+              .jcarouselControl({
+                  target: '-=1'
+              });
+
+          $('.jcarousel-control-next')
+              .on('active.jcarouselcontrol', function() {
+                  $(this).removeClass('inactive');
+              })
+              .on('inactive.jcarouselcontrol', function() {
+                  $(this).addClass('inactive');
+              })
+              .jcarouselControl({
+                  target: '+=1'
+              });
+
+          $('.jcarousel-pagination')
+              .on('active.jcarouselpagination', 'a', function() {
+                  $(this).addClass('active');
+              })
+              .on('inactive.jcarouselpagination', 'a', function() {
+                  $(this).removeClass('active');
+              })
+              .jcarouselPagination();
+      });
+  })(jQuery);
+  </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <div id="logo-banner">
+    <div class="logo">
+    <a href="https://spkit.github.io"><img src="../_static/logo/logo.png" alt="spkit logo"  border="0" /></a>
+    </div>
+    <div class="tags">
+    <ul>
+      <li>&#9672; Simple and easy to use toolkit for signal processing</li>
+      <li>&#9672; Includes basic machine learning models with visualization</li>
+      <li>&#9672; Open source</li>
+    </ul>
+    </div>
+    <div class="banner">
+    <h2>Signal Processing Toolkit</h2>
+    <h4><i>Simple and easy to use for predictive analysis</i></h4>
+    </div>
+  </div>
+
+
+  <div class=related-wrapper>
+    <div class="related" role="navigation" aria-label="related navigation" background-color="#ffff">
+    <ul>
+    <li><a href="https://spkit.github.io">Home</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">User Guide</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">Examples</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">Tutorials</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">Updates</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">About</a> |&nbsp;</li>
+    </ul>
+    </div>
+  </div>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index2.html" title="Signal Processing ToolKit documentation!"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contacts.html" title="Contacts"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Signal Processing Toolkit - Documentation!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="signal-processing-toolkit-documentation">
+<h1>Signal Processing Toolkit - Documentation!<a class="headerlink" href="#signal-processing-toolkit-documentation" title="Permalink to this heading">¶</a></h1>
+<img alt="https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/cwt_ex0.jpg" src="https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/cwt_ex0.jpg" />
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/spkit"><img alt="CircleCI" src="https://img.shields.io/circleci/build/github/Nikeshbajaj/spkit" /></a>
+<a class="reference external image-reference" href="https://spkit.readthedocs.io/en/latest/"><img alt="Documentation Status" src="https://readthedocs.org/projects/spkit/badge/?version=latest" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/spkit"><img alt="PyPI" src="https://img.shields.io/pypi/v/spkit?style=plastic" /></a>
+<a class="reference external image-reference" href="https://pepy.tech/project/spkit"><img alt="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=blue&amp;left_text=downloads" src="https://static.pepy.tech/personalized-badge/spkit?period=total&amp;units=international_system&amp;left_color=black&amp;right_color=blue&amp;left_text=downloads" /></a>
+<a class="reference external image-reference" href="https://pypi.python.org/pypi/spkit"><img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/spkit" /></a>
+<a class="reference external image-reference" href="https://github.com/Nikeshbajaj/spkit"><img alt="GitHub" src="https://img.shields.io/github/license/Nikeshbajaj/spkit" /></a>
+<dl class="field-list simple">
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>Nikesh Bajaj,
+Jesús Requena Carrión</p>
+</dd>
+<dt class="field-even">Version</dt>
+<dd class="field-even"><p>0.0.9.4 | 01/01/2022</p>
+</dd>
+<dt class="field-odd">Home</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://spkit.github.io">https://spkit.github.io</a></p>
+</dd>
+</dl>
+<div class="section" id="homepage-spkit-https-spkit-github-io">
+<h2>Homepage <em>spkit</em> - <a class="reference external" href="https://spkit.github.io">https://spkit.github.io</a><a class="headerlink" href="#homepage-spkit-https-spkit-github-io" title="Permalink to this heading">¶</a></h2>
+</div>
+<div class="section" id="new-guide-https-spkit-github-io-guide">
+<h2>New Guide: - <a class="reference external" href="https://spkit.github.io/guide/">https://spkit.github.io/guide/</a><a class="headerlink" href="#new-guide-https-spkit-github-io-guide" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div><p>– Under preperation</p>
+</div></blockquote>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html"><strong>Links:</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#installation"><strong>Installation</strong></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="information-theory">
+<h2>Information Theory<a class="headerlink" href="#information-theory" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="informationtheory.html">Information Theory for Real-Valued signals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="informationtheory.html#entropy-of-real-valued-signal-iid">Entropy of real-valued signal  (~ IID)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#id1">View in Jupyter-Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#shannan-entropy">Shannan entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#renyi-entropy-e-g-collision-entropy">Rényi entropy  (e.g. Collision Entropy)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#mutual-information-joint-entropy">Mutual Information &amp; Joint Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#conditional-entropy">Conditional entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#cross-entropy-kullbackleibler-divergence">Cross entropy &amp; Kullback–Leibler divergence</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="informationtheory.html#entropy-of-real-valued-signal-non-iid">Entropy of real-valued signal  (~ non-IID)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#spectral-entropy">Spectral Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#approximate-entropy">Approximate Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#sample-entropy">Sample Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#singular-value-decomposition-entropy">Singular Value Decomposition Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#permutation-entropy">Permutation Entropy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#dispersion-entropy">Dispersion Entropy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="informationtheory.html#eeg-signal">EEG Signal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#id3">View in Jupyter-Notebook</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#single-channel">Single Channel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="informationtheory.html#multi-channels-cross">Multi-Channels (cross)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="dispersion-entropy-time-series-physiological-signals">
+<h2>Dispersion Entropy (time-series, physiological signals)<a class="headerlink" href="#dispersion-entropy-time-series-physiological-signals" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dispersion_entropy.html">Dispersion Entropy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#backgorund">Backgorund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#an-example">An Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dispersion_entropy.html#important-note-log-base">Important Note:  <strong>Log base</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#embedding-diamension-4">Embedding diamension 4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#dispersion-entropy-with-sliding-window">Dispersion Entropy with sliding window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#dispersion-entropy-multiscale">Dispersion Entropy multiscale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#mltiscale-refined-dispersion-entropy">Mltiscale-refined Dispersion Entropy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dispersion_entropy.html#id1">View in Jupyter-Notebook for details</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="eeg-artifact-removal-algorithms">
+<h2>EEG Artifact Removal Algorithms<a class="headerlink" href="#eeg-artifact-removal-algorithms" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="atar_algo.html">ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#notebook">Notebook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#id1">View in Jupyter-Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#soft-thresholding-0-1-a-quick-example">(1) Soft Thresholding (𝛽=0.1) - a quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#linear-attenuation">(2) Linear Attenuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#elimination">(3) Elimination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#tuning-with-soft-controlling-the-aggressiveness">Tuning 𝛽 with ‘soft’ : Controlling the aggressiveness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#tuning-with-elim">Tuning 𝛽 with ‘elim’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#tuning-with-linatten">Tuning 𝛽 with ‘linAtten’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="atar_algo.html#other-settings">Other Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#wavelet-function">wavelet function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#upper-and-lower-bounds-k-1-and-k-2">upper and lower bounds: <span class="math notranslate nohighlight">\(k_1\)</span> and <span class="math notranslate nohighlight">\(k_2\)</span></a></li>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#ipr-interpercentile-range">IPR - Interpercentile range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#constant-threshold-300-not-adaptive">constant threshold (θ=300), (not adaptive)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#fixing-threshold-300-not-using-ipr-method-to-adaptively-change-threshold">fixing threshold (θα=300), not using ipr method to adaptively change threshold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atar_algo.html#window-length-5-sec">window length (5 sec)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ica_artifact_algo.html">Blind Source Seperation - ICA Based Artifact Removal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ica_artifact_algo.html#notebook">Notebook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ica_artifact_algo.html#id1">View in Jupyter-Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ica_artifact_algo.html#a-quick-example">A quick example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ica_artifact_algo.html#with-smallar-segment">With smallar segment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="complex-continuous-wavelet-transform">
+<h2>Complex Continuous Wavelet Transform<a class="headerlink" href="#complex-continuous-wavelet-transform" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cwt.html">Complex Wavelets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#notebook">Notebook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#id1">View in Jupyter-Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#a-quick-example-to-compare-different-wavelets">A quick example to compare different wavelets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#gauss-wavelet">Gauss wavelet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#plot-wavelet-functions">Plot wavelet functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#with-a-range-of-scale-parameters">With a range of scale parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#signal-analysis-eeg">Signal Analysis - EEG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#scalogram-with-default-parameters">Scalogram with default parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#with-a-range-of-frequency-and-q">With a range of frequency and Q</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#with-a-plot-of-analysis-wavelets">With a plot of analysis wavelets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#speech">Speech</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#audio">Audio</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#morlet-wavelet">Morlet wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#gabor-wavelet">Gabor wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#poisson-wavelet">Poisson wavelet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#type-1-n">#Type 1 (n)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#type-2">#Type 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cwt.html#type-3-n">#Type 3 (n)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#maxican-wavelet">Maxican wavelet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cwt.html#shannon-wavelet">Shannon wavelet</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ramanujan-filter-banks-for-period-estimation">
+<h2>Ramanujan Filter Banks for Period Estimation<a class="headerlink" href="#ramanujan-filter-banks-for-period-estimation" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ramanujam_methods.html">Ramanjum Filter Banks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ramanujam_methods.html#period-estimation-using-rfb-spkit-version-0-0-9-4">Period estimation using RFB - (spkit version 0.0.9.4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ramanujam_methods.html#single-pattern-with-period-of-10">Single pattern with period of 10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ramanujam_methods.html#multiple-pattern-with-periods-of-3-7-and-10">Multiple pattern with periods of 3,7 and 10</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="analysis-and-sythesis-models">
+<h2>Analysis and Sythesis Models<a class="headerlink" href="#analysis-and-sythesis-models" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="analysis_synthesis_models.html">Analysis and Synthesis Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_synthesis_models.html#dft-analysis-and-synthesis">DFT: Analysis and Synthesis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#analysis-and-synthesis">Analysis and Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#plot-figures">Plot figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#effect-of-windowing">Effect of windowing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#no-windowing">No windowing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id1">View in Jupyter-Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_synthesis_models.html#stft-analysis-and-synthesis">STFT: Analysis and Synthesis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id2">Analysis and Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id3">Plot figures:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id5">View in Jupyter-Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_synthesis_models.html#frft-fractional-fourier-transform">FRFT: Fractional Fourier Transform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id6">Analysis and Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id7">Plot figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id8">View in Jupyter-Notebook-1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id9">View in Jupyter-Notebook-2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="analysis_synthesis_models.html#sinasodal-model-analysis-and-synthesis">Sinasodal Model: Analysis and Synthesis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id10">Analysis and Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#plots">Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#residual">Residual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#audio-output">Audio output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="analysis_synthesis_models.html#original-audio">Original Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis_synthesis_models.html#reconstructed-audio">Reconstructed Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analysis_synthesis_models.html#residual-audio-hissing-sound">Residual Audio - hissing sound</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id14">View in Jupyter-Notebook-1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analysis_synthesis_models.html#id16">View in Jupyter-Notebook-2</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="dft-and-stft-for-analysis-and-sythesis-of-signals">
+<h2>DFT and STFT for Analysis and Sythesis of signals<a class="headerlink" href="#dft-and-stft-for-analysis-and-sythesis-of-signals" title="Permalink to this heading">¶</a></h2>
+<p>#TODO</p>
+</div>
+<div class="section" id="franctional-fourier-transform">
+<h2>Franctional Fourier Transform<a class="headerlink" href="#franctional-fourier-transform" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fractional_fourier.html">Fractional Fourier Transform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fractional_fourier.html#id1">View in Jupyter-Notebook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fractional_fourier.html#id2">Fractional Fourier Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fractional_fourier.html#fast-fractional-fourier-transform">Fast Fractional Fourier Transform</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="filtering.html">Signal Filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="filtering.html#removing-dc-component-removing-drift-using-iir">Removing DC component (removing drift) - using IIR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering.html#removing-dc-component-removing-drift-using-savitzky-golay-filter">Removing DC component (removing drift) - using Savitzky-Golay filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering.html#filtering-frequency-components-using-iir-butterworth-filter">Filtering frequency components - using IIR (butterworth) filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering.html#wavelet-filtering">Wavelet Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filtering.html#wavelet-filtering-on-smaller-windows">Wavelet Filtering - on smaller windows</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="wavelet-filtering">
+<h2>Wavelet Filtering<a class="headerlink" href="#wavelet-filtering" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wavelet_filtering.html">Wavelet Filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wavelet_filtering.html#background"><strong>Background</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet_filtering.html#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet_filtering.html#id1">View in Jupyter-Notebook for details and more examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="independent-component-analysis">
+<h2>Independent Component Analysis<a class="headerlink" href="#independent-component-analysis" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ica.html">Independent Component Analysis - ICA</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ica.html#id1">View in Jupyter-Notebook</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="eeg-topographic-maps-spatio-temporal-spectral">
+<h2>EEG Topographic Maps (Spatio-Temporal/Spectral)<a class="headerlink" href="#eeg-topographic-maps-spatio-temporal-spectral" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eeg_topog.html">EEG Topographic Maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eeg_topog.html#spatio-temporal-map">Spatio-Temporal Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eeg_topog.html#spatio-spectral-map">Spatio-Spectral Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eeg_topog.html#spatio-spectro-temporal-map">Spatio-Spectro-Temporal Map</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="machine-learning">
+<h2>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="machinelearning.html"><strong>Machine Learning</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html#new-updates">New Updates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#id1">Decision Tree - View Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html#logistic-regression"><strong>Logistic Regression</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#id2">View more examples in Notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#binary-class"><strong>Binary Class</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#multi-class-with-polynomial-features"><strong>Multi Class - with polynomial features</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html#naive-bayes"><strong>Naive Bayes</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#id4">View more examples in Notebooks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="machinelearning.html#decision-trees"><strong>Decision Trees</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#id6">View more examples in Notebooks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#depth-analysis"><strong>Depth Analysis</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="machinelearning.html#plottng-tree-while-training"><strong>Plottng tree while training</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="basic-utilities">
+<h2>Basic-utilities<a class="headerlink" href="#basic-utilities" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">Periodogram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html#a-quick-stats-of-an-array">A quick stats of an array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html#compute-statistical-outliers">Compute statistical outliers</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="lfsr">
+<h2>LFSR<a class="headerlink" href="#lfsr" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pylfsr.html">Link to pylfsr documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pylfsr.html#example-5-bit-lfsr-with-x-5-x-2-1"><strong>Example: 5 bit LFSR with x^5 + x^2 + 1</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="pylfsr.html#id1">Check out full documentation of LFSR**</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="api-doc">
+<h2>API DOc<a class="headerlink" href="#api-doc" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#entropy-functions">Entropy Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.entropy"><code class="docutils literal notranslate"><span class="pre">entropy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.mutual_Info"><code class="docutils literal notranslate"><span class="pre">mutual_Info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.dispersion_entropy"><code class="docutils literal notranslate"><span class="pre">dispersion_entropy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.dispersion_entropy_multiscale_refined"><code class="docutils literal notranslate"><span class="pre">dispersion_entropy_multiscale_refined()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#information-theory-module">Information Theory Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#information-theory-techniques">Information Theory techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.A_law"><code class="docutils literal notranslate"><span class="pre">A_law()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.Mu_law"><code class="docutils literal notranslate"><span class="pre">Mu_law()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.Quantize"><code class="docutils literal notranslate"><span class="pre">Quantize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.TD_Embed"><code class="docutils literal notranslate"><span class="pre">TD_Embed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.binSize_FD"><code class="docutils literal notranslate"><span class="pre">binSize_FD()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.bin_width"><code class="docutils literal notranslate"><span class="pre">bin_width()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy"><code class="docutils literal notranslate"><span class="pre">entropy()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_approx"><code class="docutils literal notranslate"><span class="pre">entropy_approx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_cond"><code class="docutils literal notranslate"><span class="pre">entropy_cond()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_cross"><code class="docutils literal notranslate"><span class="pre">entropy_cross()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_joint"><code class="docutils literal notranslate"><span class="pre">entropy_joint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_kld"><code class="docutils literal notranslate"><span class="pre">entropy_kld()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_permutation"><code class="docutils literal notranslate"><span class="pre">entropy_permutation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_sample"><code class="docutils literal notranslate"><span class="pre">entropy_sample()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_spectral"><code class="docutils literal notranslate"><span class="pre">entropy_spectral()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.entropy_svd"><code class="docutils literal notranslate"><span class="pre">entropy_svd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.mutual_Info"><code class="docutils literal notranslate"><span class="pre">mutual_Info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.plotJointEntropyXY"><code class="docutils literal notranslate"><span class="pre">plotJointEntropyXY()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.core.infotheory.quantize_FD"><code class="docutils literal notranslate"><span class="pre">quantize_FD()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#wavelet-analysis">Wavelet Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.cwt.ScalogramCWT"><code class="docutils literal notranslate"><span class="pre">ScalogramCWT()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#analysis-synthesis-models">Analysis &amp; Synthesis Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.dft_analysis"><code class="docutils literal notranslate"><span class="pre">dft_analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.dft_synthesis"><code class="docutils literal notranslate"><span class="pre">dft_synthesis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.stft_analysis"><code class="docutils literal notranslate"><span class="pre">stft_analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.stft_synthesis"><code class="docutils literal notranslate"><span class="pre">stft_synthesis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.sineModel_analysis"><code class="docutils literal notranslate"><span class="pre">sineModel_analysis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.sineModel_synthesis"><code class="docutils literal notranslate"><span class="pre">sineModel_synthesis()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.frft"><code class="docutils literal notranslate"><span class="pre">frft()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ifrft"><code class="docutils literal notranslate"><span class="pre">ifrft()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ffrft"><code class="docutils literal notranslate"><span class="pre">ffrft()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.iffrft"><code class="docutils literal notranslate"><span class="pre">iffrft()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.RFB"><code class="docutils literal notranslate"><span class="pre">RFB()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.RFB_prange"><code class="docutils literal notranslate"><span class="pre">RFB_prange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.Create_Dictionary"><code class="docutils literal notranslate"><span class="pre">Create_Dictionary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.PeriodStrength"><code class="docutils literal notranslate"><span class="pre">PeriodStrength()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.RFB_example_1"><code class="docutils literal notranslate"><span class="pre">RFB_example_1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.RFB_example_2"><code class="docutils literal notranslate"><span class="pre">RFB_example_2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.filterDC"><code class="docutils literal notranslate"><span class="pre">filterDC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.filterDC_sGolay"><code class="docutils literal notranslate"><span class="pre">filterDC_sGolay()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.filter_X"><code class="docutils literal notranslate"><span class="pre">filter_X()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.eeg.ATAR"><code class="docutils literal notranslate"><span class="pre">ATAR()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.eeg.ATAR_1Ch"><code class="docutils literal notranslate"><span class="pre">ATAR_1Ch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.eeg.ATAR_mCh"><code class="docutils literal notranslate"><span class="pre">ATAR_mCh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.eeg.ICA_filtering"><code class="docutils literal notranslate"><span class="pre">ICA_filtering()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.eeg.ICAremoveArtifact"><code class="docutils literal notranslate"><span class="pre">ICAremoveArtifact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ml.LR"><code class="docutils literal notranslate"><span class="pre">LR()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ml.LogisticRegression"><code class="docutils literal notranslate"><span class="pre">LogisticRegression()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ml.NaiveBayes"><code class="docutils literal notranslate"><span class="pre">NaiveBayes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ml.ClassificationTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#spkit.ml.RegressionTree"><code class="docutils literal notranslate"><span class="pre">RegressionTree()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#list-of-all-functions">List of all functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="changelog">
+<h2>ChangeLog<a class="headerlink" href="#changelog" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">ChangeLog</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="contacts">
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contacts.html">Contacts</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Signal Processing Toolkit - Documentation!</a><ul>
+<li><a class="reference internal" href="#homepage-spkit-https-spkit-github-io">Homepage <em>spkit</em> - https://spkit.github.io</a></li>
+<li><a class="reference internal" href="#new-guide-https-spkit-github-io-guide">New Guide: - https://spkit.github.io/guide/</a></li>
+<li><a class="reference internal" href="#getting-started">Getting started</a></li>
+<li><a class="reference internal" href="#information-theory">Information Theory</a></li>
+<li><a class="reference internal" href="#dispersion-entropy-time-series-physiological-signals">Dispersion Entropy (time-series, physiological signals)</a></li>
+<li><a class="reference internal" href="#eeg-artifact-removal-algorithms">EEG Artifact Removal Algorithms</a></li>
+<li><a class="reference internal" href="#complex-continuous-wavelet-transform">Complex Continuous Wavelet Transform</a></li>
+<li><a class="reference internal" href="#ramanujan-filter-banks-for-period-estimation">Ramanujan Filter Banks for Period Estimation</a></li>
+<li><a class="reference internal" href="#analysis-and-sythesis-models">Analysis and Sythesis Models</a></li>
+<li><a class="reference internal" href="#dft-and-stft-for-analysis-and-sythesis-of-signals">DFT and STFT for Analysis and Sythesis of signals</a></li>
+<li><a class="reference internal" href="#franctional-fourier-transform">Franctional Fourier Transform</a></li>
+<li><a class="reference internal" href="#filtering">Filtering</a></li>
+<li><a class="reference internal" href="#wavelet-filtering">Wavelet Filtering</a></li>
+<li><a class="reference internal" href="#independent-component-analysis">Independent Component Analysis</a></li>
+<li><a class="reference internal" href="#eeg-topographic-maps-spatio-temporal-spectral">EEG Topographic Maps (Spatio-Temporal/Spectral)</a></li>
+<li><a class="reference internal" href="#machine-learning">Machine Learning</a></li>
+<li><a class="reference internal" href="#basic-utilities">Basic-utilities</a></li>
+<li><a class="reference internal" href="#lfsr">LFSR</a></li>
+<li><a class="reference internal" href="#api-doc">API DOc</a></li>
+<li><a class="reference internal" href="#changelog">ChangeLog</a></li>
+<li><a class="reference internal" href="#contacts">Contacts</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="contacts.html"
+                          title="previous chapter">Contacts</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="index2.html"
+                          title="next chapter">Signal Processing ToolKit documentation!</a></p>
+  </div><div>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://spkit.github.io"><img src="../_static/spkitlogo5.png" height="16" width="16" alt="" /> Homepage</a></li>
+<li><a href="https://github.com/Nikeshbajaj/spkit/fork"><img src="../_static/github_logo1.png" height="16" width="16" alt="" /> Fork me on Github</a></li>
+<li><a href="https://groups.google.com/g/spkit"><img src="../_static/comments_2.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="https://spkit.github.io/examples/"><img src="../_static/spkitlogo6.png" height="16" width="16" alt="" /> Examples Gellary</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index2.html" title="Signal Processing ToolKit documentation!"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contacts.html" title="Contacts"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Signal Processing Toolkit - Documentation!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2022, Nikesh Bajaj.
+      Last updated on Nov 12, 2022.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

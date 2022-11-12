@@ -1,0 +1,1752 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API docs &#8212; SpKit</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/_static/css/basic.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within SpKit"
+          href="../_static/opensearch.xml"/>
+    <link rel="shortcut icon" href="../_static/spkitlogo7.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ChangeLog" href="changelog.html" />
+    <link rel="prev" title="Link to pylfsr documentation" href="pylfsr.html" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SpKit &#8212; Signal Processing Toolkit</title>
+<link rel="stylesheet" href="../_static/css/nature1.css" type="text/css" />
+<link rel="stylesheet" href="../_static/css/pygments.css" type="text/css" />
+<link rel="stylesheet" href="../_static/css/gallery.css" type="text/css" />
+<script type="text/javascript" id="documentation_options" data-url_root="./" src="../_static/js/documentation_options.js"></script>
+<script type="text/javascript" src="../_static/js/jquery.js"></script>
+<script type="text/javascript" src="../_static/js/underscore.js"></script>
+<script type="text/javascript" src="../_static/js/doctools.js"></script>
+<script type="text/javascript" src="../_static/js/copybutton.js"></script>
+<link rel="shortcut icon" href="../_static/logo/spkit.ico"/>
+<meta content="True" name="HandheldFriendly">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="keywords" content="signal processing, machine learning, wavelet analysis, information theory">
+
+<script type="text/javascript">
+  function updateTopMenuPosition(height, width) {
+        if($(window).scrollTop() > height && $(window).outerWidth() > 1024) {
+            //begin to scroll
+            $('.related-wrapper').css("z-index", 1000)
+            $('.related-wrapper').css("position", "sticky")
+            $('.related-wrapper').css("top", 0)
+            $('.related-wrapper').css("width", width)
+        } else {
+            //lock it back into place
+            $('.related-wrapper').css("position", "relative")
+            $('.related-wrapper').css("top", 0)
+        }
+    }
+
+    $(function() {
+        var banner_height = $('#logo-banner').outerHeight()
+        var banner_width = $('#logo-banner').outerWidth()
+        var width = $('.related-wrapper').css("height", $('.related').outerHeight())
+
+        updateTopMenuPosition(banner_height, width)
+
+        $(window).scroll(function(event) {
+            updateTopMenuPosition(banner_height, width)
+        });
+
+        $(window).resize(function(event) {
+            var banner_width = $('#logo-banner').outerWidth()
+            var menu_height = $('.related').outerHeight()
+            $('.related').css("width", banner_width)
+            $('.related-wrapper').css("height", menu_height)
+            updateTopMenuPosition(banner_height, width)
+        })
+    });
+
+    </script>
+
+<script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript">
+  (function($) {
+      $(function() {
+    $('.jcarousel').jcarousel();
+          $('.jcarousel-control-prev')
+              .on('active.jcarouselcontrol', function() {
+                  $(this).removeClass('inactive');
+              })
+              .on('inactive.jcarouselcontrol', function() {
+                  $(this).addClass('inactive');
+              })
+              .jcarouselControl({
+                  target: '-=1'
+              });
+
+          $('.jcarousel-control-next')
+              .on('active.jcarouselcontrol', function() {
+                  $(this).removeClass('inactive');
+              })
+              .on('inactive.jcarouselcontrol', function() {
+                  $(this).addClass('inactive');
+              })
+              .jcarouselControl({
+                  target: '+=1'
+              });
+
+          $('.jcarousel-pagination')
+              .on('active.jcarouselpagination', 'a', function() {
+                  $(this).addClass('active');
+              })
+              .on('inactive.jcarouselpagination', 'a', function() {
+                  $(this).removeClass('active');
+              })
+              .jcarouselPagination();
+      });
+  })(jQuery);
+  </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <div id="logo-banner">
+    <div class="logo">
+    <a href="https://spkit.github.io"><img src="../_static/logo/logo.png" alt="spkit logo"  border="0" /></a>
+    </div>
+    <div class="tags">
+    <ul>
+      <li>&#9672; Simple and easy to use toolkit for signal processing</li>
+      <li>&#9672; Includes basic machine learning models with visualization</li>
+      <li>&#9672; Open source</li>
+    </ul>
+    </div>
+    <div class="banner">
+    <h2>Signal Processing Toolkit</h2>
+    <h4><i>Simple and easy to use for predictive analysis</i></h4>
+    </div>
+  </div>
+
+
+  <div class=related-wrapper>
+    <div class="related" role="navigation" aria-label="related navigation" background-color="#ffff">
+    <ul>
+    <li><a href="https://spkit.github.io">Home</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">User Guide</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">Examples</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">Tutorials</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">Updates</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io">About</a> |&nbsp;</li>
+    </ul>
+    </div>
+  </div>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changelog.html" title="ChangeLog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pylfsr.html" title="Link to pylfsr documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API docs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="api-docs">
+<h1>API docs<a class="headerlink" href="#api-docs" title="Permalink to this heading">¶</a></h1>
+<div class="section" id="entropy-functions">
+<h2>Entropy Functions<a class="headerlink" href="#entropy-functions" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.entropy">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreZero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L35-L70"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rényi entropy of order α
+alpha:[0,inf]</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">0</dt>
+<dd class="field-odd"><p>Max-entropy
+H(x) = log(N)
+where N = number of bins</p>
+</dd>
+<dt class="field-even">1</dt>
+<dd class="field-even"><p>Shannan entropy
+H(x) = -sum{Px*log(Px)}</p>
+</dd>
+<dt class="field-odd">2</dt>
+<dd class="field-odd"><p>Collision entropy or Rényi entropy
+H(x) = 1/(1-α)*log{sum{Px^α}}</p>
+</dd>
+<dt class="field-even">inf:Min-entropy</dt>
+<dd class="field-even"><p>H(x) = -log(max(Px))</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>base: base of log:</dt><dd><p>: if 2, entropy is in bits, e-nats, 10 -bans</p>
+</dd>
+<dt>ignoreZero: if true, probabilities with zero value will be omited, before computations</dt><dd><p>: It doesn’t make much of difference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.mutual_Info">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">mutual_Info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreZero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L107-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.mutual_Info" title="Permalink to this definition">¶</a></dt>
+<dd><p>I(X;Y) = H(X)+H(Y)-H(X,Y)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.dispersion_entropy">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">dispersion_entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cdf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">de_normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infomation_theory_advance.py#L73-L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.dispersion_entropy" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="calculate-dispersion-entropy-of-signal-x-multiscale">
+<h3>Calculate dispersion entropy of signal x (multiscale)<a class="headerlink" href="#calculate-dispersion-entropy-of-signal-x-multiscale" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="input">
+<h3>input:<a class="headerlink" href="#input" title="Permalink to this heading">¶</a></h3>
+<p>x      : input signal x - 1d-array of shape=(n,)
+classes: number of classes - (levels of quantization of amplitude) (default=10)
+emb_dim: embedding dimension,
+delay  : time delay (default=1)
+scale  : downsampled signal with low resolution  (default=1)  - for multipscale dispersion entropy
+mapping_type: mapping method to discretizing signal (default=’cdf’)</p>
+<blockquote>
+<div><p>: options = {‘cdf’,’a-law’,’mu-law’,’fd’}</p>
+</div></blockquote>
+<p>A  : factor for A-Law- if mapping_type = ‘a-law’
+Mu : factor for μ-Law- if mapping_type = ‘mu-law’</p>
+<dl>
+<dt>de_normalize: (bool) if to normalize the entropy, to make it comparable with different signal with different</dt><dd><p>number of classes and embeding dimensions. default=0 (False) - no normalizations</p>
+</dd>
+<dt>if de_normalize=1:</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>dispersion entropy is normalized by log(Npp); Npp=total possible patterns. This is classical
+way to normalize entropy since   max{H(x)}&lt;=np.log(N) for possible outcomes. However, in case of
+limited length of signal (sequence), it would be not be possible to get all the possible patterns
+and might be incorrect to normalize by log(Npp), when len(x)&lt;Npp or len(x)&lt;classes**emb_dim.
+For example, given signal x with discretized length of 2048 samples, if classes=10 and emb_dim=4,
+the number of possible patterns Npp = 10000, which can never be found in sequence length &lt; 10000+4.
+To fix this, the alternative way to nomalize is recommended as follow.</p></li>
+<li><p>select this when classes**emb_dim &lt; (N-(emb_dim-1)*delay)</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>de_normalize=2: (recommended for classes**emb_dim &gt; len(x)/scale)</dt><dd><ul class="simple">
+<li><p>dispersion entropy is normalized by log(Npf); Npf [= (len(x)-(emb_dim - 1) * delay)]
+the total  number of patterns founds in given sequence. This is much better normalizing factor.
+In worst case (lack of better word) - for a very random signal, all Npf patterns could be different
+and unique, achieving the maximum entropy and for a constant signal, all Npf will be same achieving to
+zero entropy</p></li>
+<li><p>select this when classes**emb_dim &gt; (N-(emb_dim-1)*delay)</p></li>
+</ul>
+</dd>
+<dt>de_normalize=3:</dt><dd><ul class="simple">
+<li><p>dispersion entropy is normalized by log(Nup); number of total unique patterns (NOT RECOMMENDED)
+-  it does not make sense (not to me, at least)</p></li>
+</ul>
+</dd>
+<dt>de_normalize=4:</dt><dd><ul class="simple">
+<li><p>auto select normalizing factor</p></li>
+<li><p>if classes**emb_dim &gt; (N-(emb_dim-1)*delay), then de_normalize=2</p></li>
+<li><p>if classes**emb_dim &gt; (N-(emb_dim-1)*delay), then de_normalize=2</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="output">
+<h3>output<a class="headerlink" href="#output" title="Permalink to this heading">¶</a></h3>
+<p>disp_entr  : dispersion entropy of the signal
+prob       : probability distribution of patterns</p>
+<p>if return_all True - also returns</p>
+<p>patterns_dict: disctionary of patterns and respective frequencies
+x_discrete   : discretized signal x
+(Npf,Npp,Nup): Npf - total_patterns_found, Npp - total_patterns_possible) and Nup - total unique patterns found</p>
+<blockquote>
+<div><p>: Npf number of total patterns in discretized signal (not total unique patterns)</p>
+</div></blockquote>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.dispersion_entropy_multiscale_refined">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">dispersion_entropy_multiscale_refined</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scales</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emb_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cdf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">de_normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infomation_theory_advance.py#L201-L311"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.dispersion_entropy_multiscale_refined" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="calculate-multiscale-refined-dispersion-entropy-of-signal-x">
+<h3>Calculate multiscale refined dispersion entropy of signal x<a class="headerlink" href="#calculate-multiscale-refined-dispersion-entropy-of-signal-x" title="Permalink to this heading">¶</a></h3>
+<p>compute dispersion entropy at different scales (defined by argument - ‘scales’) and combining the patterns
+found at different scales to compute final dispersion entropy</p>
+</div>
+<div class="section" id="id1">
+<h3>input:<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>x       : input signal x - 1d-array of shape=(n,)
+classes : number of classes - (levels of quantization of amplitude) (default=10)
+emb_dim : embedding dimension,
+delay   : time delay (default=1)
+scales  : list or 1d array of scales to be considered to refine the dispersion entropy</p>
+<dl class="simple">
+<dt>mapping_type: mapping method to discretizing signal (default=’cdf’)</dt><dd><p>: options = {‘cdf’,’a-law’,’mu-law’,’fd’}</p>
+</dd>
+</dl>
+<p>A  : factor for A-Law- if mapping_type = ‘a-law’
+Mu : factor for μ-Law- if mapping_type = ‘mu-law’</p>
+<dl>
+<dt>de_normalize: (bool) if to normalize the entropy, to make it comparable with different signal with different</dt><dd><p>number of classes and embeding dimensions. default=0 (False) - no normalizations</p>
+</dd>
+<dt>if de_normalize=1:</dt><dd><blockquote>
+<div><ul class="simple">
+<li><p>dispersion entropy is normalized by log(Npp); Npp=total possible patterns. This is classical
+way to normalize entropy since   max{H(x)}&lt;=np.log(N) for possible outcomes. However, in case of
+limited length of signal (sequence), it would be not be possible to get all the possible patterns
+and might be incorrect to normalize by log(Npp), when len(x)&lt;Npp or len(x)&lt;classes**emb_dim.
+For example, given signal x with discretized length of 2048 samples, if classes=10 and emb_dim=4,
+the number of possible patterns Npp = 10000, which can never be found in sequence length &lt; 10000+4.
+To fix this, the alternative way to nomalize is recommended as follow.</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>de_normalize=2: (recommended for classes**emb_dim &gt; len(x)/scale)</dt><dd><ul class="simple">
+<li><p>dispersion entropy is normalized by log(Npf); Npf [= (len(x)-(emb_dim - 1) * delay)]
+the total  number of patterns founds in given sequence. This is much better normalizing factor.
+In worst case (lack of better word) - for a very random signal, all Npf patterns could be different
+and unique, achieving the maximum entropy and for a constant signal, all Npf will be same achieving to
+zero entropy</p></li>
+</ul>
+</dd>
+<dt>de_normalize=3:</dt><dd><ul class="simple">
+<li><p>dispersion entropy is normalized by log(Nup); number of total unique patterns (NOT RECOMMENDED)
+-  it does not make sense (not to me, at least)</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>output<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h3>
+<p>disp_entr  : dispersion entropy of the signal
+prob       : probability distribution of patterns</p>
+<p>if return_all True - also returns</p>
+<p>patterns_dict: disctionary of patterns and respective frequencies
+x_discrete   : discretized signal x
+(Npf,Npp,Nup): Npf - total_patterns_found, Npp - total_patterns_possible) and Nup - total unique patterns found</p>
+<blockquote>
+<div><p>: Npf number of total patterns in discretized signal (not total unique patterns)</p>
+</div></blockquote>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="information-theory-module">
+<h2>Information Theory Module<a class="headerlink" href="#information-theory-module" title="Permalink to this heading">¶</a></h2>
+<span class="target" id="module-spkit.core.infotheory"></span><div class="section" id="information-theory-techniques">
+<h3>Information Theory techniques<a class="headerlink" href="#information-theory-techniques" title="Permalink to this heading">¶</a></h3>
+<p>Author &#64; Nikesh Bajaj
+Date: 18 Apr 2019
+Version : 0.0.3
+Github :  <a class="reference external" href="https://github.com/Nikeshbajaj/spkit">https://github.com/Nikeshbajaj/spkit</a>
+Contact: <a class="reference external" href="mailto:n&#46;bajaj&#37;&#52;&#48;qmul&#46;ac&#46;uk">n<span>&#46;</span>bajaj<span>&#64;</span>qmul<span>&#46;</span>ac<span>&#46;</span>uk</a></p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.A_law">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">A_law</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">companding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L356-L411"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.A_law" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="a-law-for-companding-and-expanding">
+<h3>A-Law for companding and expanding<a class="headerlink" href="#a-law-for-companding-and-expanding" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>A way to map gaussian, or laplacian distribuated signal to uniformly distributed one</p></li>
+<li><p>for companding - smaller amplitude values are stretched (since they have high-probabilty)
+and large amplitutde values are compressed (since they have low probabiltity)</p></li>
+<li><p>for expending - it reverts the mapping</p></li>
+</ul>
+<p>for -1 ≤ x ≤ 1 and 1 &lt; A
+Companding:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>y(n) = sign(x)* (A|x|/(1 + log(A)))               if   <a href="#id3"><span class="problematic" id="id4">|</span></a>x|&lt;1/A</dt><dd><p>= sign(x)* ((1 + log(A|x|)) /(1 + log(A)))   else</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>expanding:</dt><dd><dl class="simple">
+<dt>y(n) = sign(x)* (<a href="#id5"><span class="problematic" id="id6">|</span></a>x|(1+log(A)))/A                 if   <a href="#id7"><span class="problematic" id="id8">|</span></a>x|&lt;1/(1+log(A))</dt><dd><p>= sign(x)* (np.exp(-1 + <a href="#id9"><span class="problematic" id="id10">|</span></a>x|(1+log(A)))) /A   else</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>An alternative to μ-Law</p></li>
+<li><p>The μ-law algorithm provides a slightly larger dynamic range than the A-law
+at the cost of worse proportional distortions for small signals.</p></li>
+</ul>
+</div>
+<div class="section" id="ref-https-en-wikipedia-org-wiki-a-law-algorithm">
+<h3>Ref: <a class="reference external" href="https://en.wikipedia.org/wiki/A-law_algorithm">https://en.wikipedia.org/wiki/A-law_algorithm</a><a class="headerlink" href="#ref-https-en-wikipedia-org-wiki-a-law-algorithm" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id11">
+<h3>input<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h3>
+<p>x  : 1d (or nd) array of signal, must be  -1 ≤ x ≤ 1
+A  : scalar (1≤A) - factor for companding-expanding mapping</p>
+<blockquote>
+<div><p>: 1: identity function, higher value of A will stretch and compress more</p>
+</div></blockquote>
+<p>companding: (bool) -  if True, companding is applied, else expanding</p>
+</div>
+<div class="section" id="id12">
+<h3>output<a class="headerlink" href="#id12" title="Permalink to this heading">¶</a></h3>
+<p>y: mapped output of same shape as x</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.Mu_law">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">Mu_law</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">255</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">companding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L308-L354"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.Mu_law" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="law-for-companding-and-expanding">
+<h3>μ-Law for companding and expanding<a class="headerlink" href="#law-for-companding-and-expanding" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>A way to map gaussian, or laplacian distribuated signal to uniformly distributed one</p></li>
+<li><p>for companding - smaller amplitude values are stretched (since they have high-probabilty)
+and large amplitutde values are compressed (since they have low probabiltity)</p></li>
+<li><p>for expending - it reverts the mapping</p></li>
+</ul>
+<p>for -1 ≤ x ≤ 1
+Companding:</p>
+<blockquote>
+<div><p>y(n) = sign(x)*log(1 + μ|x|)/log(1 + μ)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>expanding:</dt><dd><p>y(n) = sign(x)*((1 + μ)**|x| - 1)/μ</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>An alternative to A-Law</p></li>
+<li><p>The μ-law algorithm provides a slightly larger dynamic range than the A-law
+at the cost of worse proportional distortions for small signals.</p></li>
+</ul>
+</div>
+<div class="section" id="ref-https-en-wikipedia-org-wiki-m-law-algorithm">
+<h3>Ref: <a class="reference external" href="https://en.wikipedia.org/wiki/M-law_algorithm">https://en.wikipedia.org/wiki/M-law_algorithm</a><a class="headerlink" href="#ref-https-en-wikipedia-org-wiki-m-law-algorithm" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id13">
+<h3>input<a class="headerlink" href="#id13" title="Permalink to this heading">¶</a></h3>
+<p>x  : 1d (or nd) array of signal, must be  -1 ≤ x ≤ 1
+Mu : scalar (0≤Mu) - factor for companding-expanding mapping</p>
+<blockquote>
+<div><p>: ~0: identity function, higher value of Mu will stretch and compress more
+: use 1e-5 for Mu=0 to avoid ‘zero-division’ error</p>
+</div></blockquote>
+<p>companding: (bool) -  if True, companding is applied, else expanding</p>
+</div>
+<div class="section" id="id14">
+<h3>output<a class="headerlink" href="#id14" title="Permalink to this heading">¶</a></h3>
+<p>y: mapped output of same shape as x</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.Quantize">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">Quantize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cdf_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L530-L558"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.Quantize" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="id15">
+<h3>input<a class="headerlink" href="#id15" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id16">
+<h3>output<a class="headerlink" href="#id16" title="Permalink to this heading">¶</a></h3>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.TD_Embed">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">TD_Embed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L245-L266"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.TD_Embed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time delay Embedding Matrix.
+input
+———-
+x : 1d-array, time series of shape (n,)
+order : int, Embedding dimension (order).
+delay : int,  Delay.</p>
+<div class="section" id="id17">
+<h3>output<a class="headerlink" href="#id17" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>X: Embedded Matrix: ndarray</dt><dd><p>Embedded time-series, of shape (n - (order - 1) * delay, order)</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.binSize_FD">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">binSize_FD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L488-L504"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.binSize_FD" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="compute-bin-width-using-freedmandiaconis-rule">
+<h3>Compute bin width using Freedman–Diaconis rule<a class="headerlink" href="#compute-bin-width-using-freedmandiaconis-rule" title="Permalink to this heading">¶</a></h3>
+<p>bin_width = 2*IQR(x)/(n**(1/3))</p>
+</div>
+<div class="section" id="id18">
+<h3>input<a class="headerlink" href="#id18" title="Permalink to this heading">¶</a></h3>
+<p>x: 1d-array</p>
+</div>
+<div class="section" id="id19">
+<h3>output<a class="headerlink" href="#id19" title="Permalink to this heading">¶</a></h3>
+<p>bw : bin width</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.bin_width">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">bin_width</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fd'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L413-L486"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.bin_width" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="compute-bin-width-using-different-methods">
+<h3>Compute bin width using different methods<a class="headerlink" href="#compute-bin-width-using-different-methods" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>‘fd’ (Freedman Diaconis Estimator)</dt><dd><ul class="simple">
+<li><p>Robust (resilient to outliers) estimator that takes into account data variability and data size.</p></li>
+</ul>
+</dd>
+<dt>‘doane’</dt><dd><ul class="simple">
+<li><p>An improved version of Sturges’ estimator that works better with non-normal datasets.</p></li>
+</ul>
+</dd>
+<dt>‘scott’</dt><dd><ul class="simple">
+<li><p>Less robust estimator that that takes into account data variability and data size.</p></li>
+</ul>
+</dd>
+<dt>‘stone’</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Estimator based on leave-one-out cross-validation estimate of the integrated squared error.</dt><dd><p>Can be regarded as a generalization of Scott’s rule.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>‘rice’</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Estimator does not take variability into account, only data size.</dt><dd><p>Commonly overestimates number of bins required.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>‘sturges’</dt><dd><ul class="simple">
+<li><p>Only accounts for data size. Only optimal for gaussian data and underestimates number of bins
+for large non-gaussian datasets.</p></li>
+</ul>
+</dd>
+<dt>‘sqrt’</dt><dd><ul class="simple">
+<li><p>Square root (of data size) estimator, used by Excel and other programs for its speed and simplicity.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id20">
+<h3>input<a class="headerlink" href="#id20" title="Permalink to this heading">¶</a></h3>
+<p>x :  1d-array or (n-d array)
+method : method to compute bin width and number of bins</p>
+</div>
+<div class="section" id="id21">
+<h3>output<a class="headerlink" href="#id21" title="Permalink to this heading">¶</a></h3>
+<p>bw : bin width
+k  : number of bins</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreZero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L35-L70"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rényi entropy of order α
+alpha:[0,inf]</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">0</dt>
+<dd class="field-odd"><p>Max-entropy
+H(x) = log(N)
+where N = number of bins</p>
+</dd>
+<dt class="field-even">1</dt>
+<dd class="field-even"><p>Shannan entropy
+H(x) = -sum{Px*log(Px)}</p>
+</dd>
+<dt class="field-odd">2</dt>
+<dd class="field-odd"><p>Collision entropy or Rényi entropy
+H(x) = 1/(1-α)*log{sum{Px^α}}</p>
+</dd>
+<dt class="field-even">inf:Min-entropy</dt>
+<dd class="field-even"><p>H(x) = -log(max(Px))</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>base: base of log:</dt><dd><p>: if 2, entropy is in bits, e-nats, 10 -bans</p>
+</dd>
+<dt>ignoreZero: if true, probabilities with zero value will be omited, before computations</dt><dd><p>: It doesn’t make much of difference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_approx">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_approx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L230-L243"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_approx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Approximate Entropy
+Ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Approximate_entropy">https://en.wikipedia.org/wiki/Approximate_entropy</a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_cond">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_cond</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreZero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L96-L105"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_cond" title="Permalink to this definition">¶</a></dt>
+<dd><p>H(X|Y) = H(X,Y) - H(Y)</p>
+<p>0 &lt;= H(X|Y) &lt;= H(x)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_cross">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L148-L177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cross entropy
+H_xy = - sum{Px*log(Py)}</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_joint">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_joint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreZero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L72-L94"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_joint" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>H(X,Y) = sum {P(x,y)*np.log(P(x,y))}</p>
+</div></blockquote>
+<p>Computing joint probability using histogram2d from numpy</p>
+<p>max{H(x),H(y)} &lt;= H(X,Y) &lt;= H(x) + H(y)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_kld">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_kld</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L118-L146"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_kld" title="Permalink to this definition">¶</a></dt>
+<dd><p>H_xy =  sum{Px*log(Px/Py)}
+Cross entropy - Kullback–Leibler divergence</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_permutation">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_permutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L283-L299"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_permutation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permutation Entropy.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_sample">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L207-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample Entropy
+Ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Sample_entropy">https://en.wikipedia.org/wiki/Sample_entropy</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_spectral">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_spectral</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fft'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nperseg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bining</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L179-L205"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_spectral" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spectral Entropy
+Measure of the uncertainity of frequency components in a Signal
+For Uniform distributed signal and Gaussian distrobutated signal, their entropy is quite different, but in spectral domain, both have same entropy
+x: 1d array
+fs = sampling frequency
+method: ‘fft’ use periodogram and ‘welch’ uses wekch method
+base: base of log, 2 for bit, 10 for nats</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.entropy_svd">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">entropy_svd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L268-L281"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.entropy_svd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Singular Value Decomposition entropy.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.mutual_Info">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">mutual_Info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreZero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L107-L116"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.mutual_Info" title="Permalink to this definition">¶</a></dt>
+<dd><p>I(X;Y) = H(X)+H(Y)-H(X,Y)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.plotJointEntropyXY">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">plotJointEntropyXY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Venn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DistPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">JointPlot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">printVals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L561-L646"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.plotJointEntropyXY" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="analyse-entropy-venn-diagrams-of-x-and-y">
+<h3>Analyse Entropy-Venn Diagrams of X and Y<a class="headerlink" href="#analyse-entropy-venn-diagrams-of-x-and-y" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id22">
+<h3>input<a class="headerlink" href="#id22" title="Permalink to this heading">¶</a></h3>
+<p>x: 1d-array
+y: 1d-array of same size as x
+Venn: if True, plot Venn diagram
+DistPlot: if True, plot distribuation of x and y
+JointPlot: if True, plot joint distribuation
+printVals: if True, print values
+output
+——-
+Nothing is returned, just plots and prints</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.core.infotheory.quantize_FD">
+<span class="sig-prename descclassname"><span class="pre">spkit.core.infotheory.</span></span><span class="sig-name descname"><span class="pre">quantize_FD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_amp_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/infotheory.py#L506-L528"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.core.infotheory.quantize_FD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discretize (quantize) input signal x using optimal bin-width (FD)</p>
+<div class="section" id="id23">
+<h3>input<a class="headerlink" href="#id23" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id24">
+<h3>output<a class="headerlink" href="#id24" title="Permalink to this heading">¶</a></h3>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="wavelet-analysis">
+<h2>Wavelet Analysis<a class="headerlink" href="#wavelet-analysis" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.cwt.ScalogramCWT">
+<span class="sig-prename descclassname"><span class="pre">spkit.cwt.</span></span><span class="sig-name descname"><span class="pre">ScalogramCWT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Gauss'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PlotPSD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PlotW</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fftMeth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sinc'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">Parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#spkit.cwt.ScalogramCWT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute scalogram using Continues Wavelet Transform for wavelet type (wType) and given scale range</p>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h3>
+<p>x: array-like, input signal,
+t: array-like, time array corresponding to x, same length as x
+fs: sampling rate
+PlotPSD: bool, if True, plot Scalogram
+PlotW :  bool, if True, plot wavelets in time and frequecy with different scalling version
+fftMeth: if True, FFT method is used, else convolution method is used. FFT method is faster.
+interpolation: str, or None, interpolation while ploting Scalogram.</p>
+</div>
+<div class="section" id="parameters-for-different-wavelet-functions">
+<h3>Parameters for different wavelet functions<a class="headerlink" href="#parameters-for-different-wavelet-functions" title="Permalink to this heading">¶</a></h3>
+<p>Common Parameters for all the Wavelet functions</p>
+<dl class="simple">
+<dt>f<span class="classifier">array of frequency range to be analysed, e.g. np.linspace(-10,10,2*N-1), where N = len(x)</span></dt><dd><p>: if None, frequency range of signal is considered from -fs/2 to fs/2
+: ( fs/n1*(np.arange(n1)-n1/2))</p>
+</dd>
+</dl>
+<p>A list of wavelets will be generated for each value of scale (e.g. f0, sigma, n etc)</p>
+<ol class="arabic">
+<li><dl>
+<dt>Gauss: (wType ==’Gauss’)</dt><dd><p>f0 = array of center frquencies for wavelets, default: np.linspace(0.1,10,100) [scale value]
+Q  = float or array of q-factor for each wavelet, e.g. 0.5 (default) or np.linspace(0.1,5,100)</p>
+<blockquote>
+<div><p>: if array, should be of same size as f0</p>
+</div></blockquote>
+<p>t0 = float=0, time shift of wavelet, or phase shift in frquency, Not suggeestive to change</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Morlet: (wType ==’Morlet’)</dt><dd><p>sig = array of sigma values for morlet wavelet, default: np.linspace(0.1,10,100) [scale value]
+fw = array of frequency range, e.g. np.linspace(-10,10,2*N-1), where N = len(x)
+ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Morlet_wavelet">https://en.wikipedia.org/wiki/Morlet_wavelet</a></p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>For Gabor: (wType ==’Gabor’)</dt><dd><p>Gauss and Gabor wavelet are essentially same
+f0 = array of center frquencies for wavelets, default: np.linspace(1,40,100) [scale value]
+a  = float, oscillation parameter, default 0.5,</p>
+<blockquote>
+<div><p>could be an array (not suggeestive), similar to Gauss, e.g np.linspace(0.1,1,100) or np.logspace(0.001,0.5,100)</p>
+</div></blockquote>
+<p>t0 = float=0, time shift of wavelet, or phase shift in frquency. Not suggeestive to change</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>For Poisson: (wType==’Poisson’)</dt><dd><p>n  = array of intergers, default np.arange(100), [scale value]
+method = 1,2,3, different implementation of Poisson funtion, default 3
+keep the method=3, other methods are under development and not exactly compatibile with framework yet,</p>
+<p>ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_wavelet">https://en.wikipedia.org/wiki/Poisson_wavelet</a></p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>For Complex MaxicanHat: (wType==’cMaxican’)</dt><dd><p>f0 = array of center frquencies for wavelets, default: np.linspace(1,40,100) [scale value]
+a  = float, oscillation parameter, default 1.0, could be an array (not suggeestive)</p>
+<p>ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_Mexican_hat_wavelet">https://en.wikipedia.org/wiki/Complex_Mexican_hat_wavelet</a></p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>For Complex Shannon: (wType==’cShannon’)</dt><dd><p>f0 = array of center frquencies for wavelets, default: 0.1*np.arange(10) [scale value],
+fw = BandWidth each wavelet, default 0.5, could be an array (not suggeestive)</p>
+<p>ref: <a class="reference external" href="https://en.wikipedia.org/wiki/Shannon_wavelet">https://en.wikipedia.org/wiki/Shannon_wavelet</a></p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this heading">¶</a></h3>
+<p>XW: Complex-valued matrix of time-scale - Scalogram, with shape (len(S), len(x)). scale vs time
+S :  scale values</p>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h3>
+<p>import numpy as np
+import matplotlib.pyplot as plt
+from spkit.cwt import ScalogramCWT</p>
+<p># Example 1 - EEG Signal
+import spkit as sp
+from spkit.cwt import compare_cwt_example
+x,fs = sp.load_data.eegSample_1ch()
+t = np.arange(len(x))/fs
+print(x.shape, t.shape)
+compare_cwt_example(x,t,fs=fs)</p>
+<p># Example 2.1 - different wavelets
+XW,S = ScalogramCWT(x,t,fs=fs,wType=’Gauss’,PlotPSD=True)</p>
+<p># Example 2.2 - set scale values and number of points
+nS = 100
+f0 = np.linspace(0.1,10,nS) # range of scale values - frquency
+Q  = np.linspace(0.1,5,nS)  # different q-factor for each scale value
+# Q = 0.5
+XW,S = ScalogramCWT(x,t,fs=fs,wType=’Gauss’,PlotPSD=True,f0=f0,Q=Q)</p>
+<p># Example 2.3  - plot scalled wavelets too
+XW,S = ScalogramCWT(x,t,fs=fs,wType=’Gauss’,PlotPSD=True,PlotW=True,f0=f0,Q=Q)</p>
+<p># Example 3
+t = np.linspace(-5, 5, 10*100)
+x = (np.sin(2*np.pi*0.75*t*(1-t) + 2.1) + 0.1*np.sin(2*np.pi*1.25*t + 1) + 0.18*np.cos(2*np.pi*3.85*t))
+xn = x + np.random.randn(len(t)) * 0.5
+XW,S = ScalogramCWT(xn,t,fs=100,wType=’Gauss’,PlotPSD=True)</p>
+<p># Example 4
+f0 = np.linspace(0.1,30,100)
+Q  = np.linspace(0.1,5,100) # or = 0.5
+XW,S = ScalogramCWT(xn,t,fs=128,wType=’Gauss’,PlotPSD=True,f0=f0,Q=Q)</p>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="analysis-synthesis-models">
+<h2>Analysis &amp; Synthesis Models<a class="headerlink" href="#analysis-synthesis-models" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.dft_analysis">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">dft_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blackmanharris'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling_dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize_win</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/advance_techniques.py#L38-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.dft_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="analysis-of-a-signal-x-using-the-discrete-fourier-transform">
+<h3>Analysis of a signal x using the Discrete Fourier Transform<a class="headerlink" href="#analysis-of-a-signal-x-using-the-discrete-fourier-transform" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id25">
+<h3>input<a class="headerlink" href="#id25" title="Permalink to this heading">¶</a></h3>
+<p>x  : 1d-array input signal ofshape (n,)
+window: window-type (default = ‘blackmanharris’)</p>
+<blockquote>
+<div><p>: in None, qrectangular window is used</p>
+</div></blockquote>
+<dl class="simple">
+<dt>N<span class="classifier">FFT size should be &gt;= len(x) and power of 2</span></dt><dd><p>: if None then N = 2**np.ceil(np.log2(len(n)))</p>
+</dd>
+<dt>scaling_dB: bool, if false, then linear scale of spectrum is returned, else in dB</dt><dd><p>: default True</p>
+</dd>
+</dl>
+<p>normalize_win: bool (default True), if to normalize wondow (recommended)
+plot: int, (default: 0) for no plot</p>
+<blockquote>
+<div><p>: 1 for plotting magnitude and phse spectrum
+: 2 for ploting signal along with spectrum</p>
+</div></blockquote>
+<dl class="simple">
+<dt>fs<span class="classifier">sampling frequency, only used to plot the signal when plot=2</span></dt><dd><p>: if not provided, fs=1 is used
+: it does not affect any computations</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id26">
+<h3>output<a class="headerlink" href="#id26" title="Permalink to this heading">¶</a></h3>
+<p>mX: magnitude spectrum (of shape=int((N/2)+1)) # positive spectra
+pX: phase spectrum  same shape as mX
+N : N-point FFT used for computation</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.dft_synthesis">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">dft_synthesis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling_dB</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/advance_techniques.py#L157-L211"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.dft_synthesis" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="synthesis-of-a-signal-using-the-discrete-fourier-transform-from-positive-spectra">
+<h3>Synthesis of a signal using the Discrete Fourier Transform from positive spectra<a class="headerlink" href="#synthesis-of-a-signal-using-the-discrete-fourier-transform-from-positive-spectra" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id27">
+<h3>input<a class="headerlink" href="#id27" title="Permalink to this heading">¶</a></h3>
+<p>mX: magnitude spectrum - 1d-array  (of shape=int((N/2)+1)) for N-point FFT
+pX: phase spectrum     - same size as mX
+M : length of signal: x, if None, then M = N = 2*(len(mX)-1)
+window: if provided, synthesized signal is rescalled with corresponding window function</p>
+<blockquote>
+<div><p>: undoing the scaling</p>
+</div></blockquote>
+</div>
+<div class="section" id="id28">
+<h3>output<a class="headerlink" href="#id28" title="Permalink to this heading">¶</a></h3>
+<p>y: output signal of shape (M,)</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.stft_analysis">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">stft_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winlen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blackmanharris'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/advance_techniques.py#L213-L262"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.stft_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="analysis-of-a-signal-using-the-short-time-fourier-transform">
+<h3>Analysis of a signal using the Short-Time Fourier Transform<a class="headerlink" href="#analysis-of-a-signal-using-the-short-time-fourier-transform" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id29">
+<h3>input<a class="headerlink" href="#id29" title="Permalink to this heading">¶</a></h3>
+<p>x: 1d-array signal - shape (n,)
+winlen : window length for analysis (good choice is a odd number)</p>
+<blockquote>
+<div><p>: window size is chosen based on the frequency resolution required
+: winlen &gt;= Bs*fs/del_f
+: where Bs=4 for hamming window, Bs=6 for blackman harris
+: def_f is different between two frequecies (to be resolve)
+: higher the window length better the frequency resolution, but poor time resolution</p>
+</div></blockquote>
+<dl class="simple">
+<dt>overlap: overlap of windows</dt><dd><p>: if None then winlen//2 is used (50% overlap)
+: shorter overlap can improve time resoltion - upto an extend</p>
+</dd>
+<dt>window: analysis window (default = blackmanharris)</dt><dd><p>: if None, rectangular window is used</p>
+</dd>
+<dt>nfft: FFT size, should be &gt;=winlen and power of 2</dt><dd><p>: if None -  nfft = 2**np.ceil(np.log2(len(n)))</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id30">
+<h3>output<a class="headerlink" href="#id30" title="Permalink to this heading">¶</a></h3>
+<p>mXt : magnitude spectra of shape (number of frames, int((nfft/2)+1))
+pXt : phase spectra of same shape as mXt</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.stft_synthesis">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">stft_synthesis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mXt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pXt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winlen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/advance_techniques.py#L264-L291"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.stft_synthesis" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="synthesis-of-signal-from-short-time-fourier-transform">
+<h3>Synthesis of signal from Short-Time Fourier Transform<a class="headerlink" href="#synthesis-of-signal-from-short-time-fourier-transform" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id31">
+<h3>input<a class="headerlink" href="#id31" title="Permalink to this heading">¶</a></h3>
+<p>mXt: magnitude spectra of signal - 2d-array of shape (number of frames, int((nfft/2)+1))
+pXt: phase spectra of same size as mXt
+winlen: window length used while analysing
+overlap: overlap of windows used while analysing</p>
+</div>
+<div class="section" id="id32">
+<h3>output<a class="headerlink" href="#id32" title="Permalink to this heading">¶</a></h3>
+<p>y : 1d-array - synthesized signal shape = (nFrames*overlap + winlen)</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.sineModel_analysis">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">sineModel_analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winlen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blackmanharris'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nfft</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxn_sines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minDur</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_devOffset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq_devSlope</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/advance_techniques.py#L819-L916"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.sineModel_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="analysis-of-a-signal-x-using-the-sinusoidal-model">
+<h3>Analysis of a signal x using the sinusoidal model<a class="headerlink" href="#analysis-of-a-signal-x-using-the-sinusoidal-model" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Decomposing a signal x into sine waves tracks over the time</p></li>
+</ul>
+</div>
+<div class="section" id="id33">
+<h3>input<a class="headerlink" href="#id33" title="Permalink to this heading">¶</a></h3>
+<p>x : input signal - 1d-array of shape (n,)
+fs: sampling frequency</p>
+<p>winlen : window length for analysis
+overlap: overlap of windows</p>
+<blockquote>
+<div><p>: if None overlap = winlen//4</p>
+</div></blockquote>
+<p>window : window type (default = ‘blackmanharris’) e.g. hann,ham</p>
+<dl class="simple">
+<dt>nfft: FFT-points used for analysis, should be &gt;=winlen and should be of power of 2</dt><dd><p>: if None, than nfft = ceil[2**log2(winlen)]</p>
+</dd>
+</dl>
+<p>thr : threshold in negative dB for selecting sine tracks
+maxn_sines: maximum number of sines per frame
+minDur    : minimum duration of sines in seconds
+freq_devOffset: minimum frequency deviation
+freq_devSlope : slope increase of minimum frequency deviation</p>
+</div>
+<div class="section" id="id34">
+<h3>output<a class="headerlink" href="#id34" title="Permalink to this heading">¶</a></h3>
+<p>fXt : frequencies
+mXt  : magnitudes
+pXt: phases of sinusoidal tracks</p>
+<p>fXt, mXt, pXt</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.sineModel_synthesis">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">sineModel_synthesis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fXt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mXt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pXt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/advance_techniques.py#L918-L1003"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.sineModel_synthesis" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="synthesis-of-signal-x-using-the-sinusoidal-model">
+<h3>Synthesis of signal x using the Sinusoidal Model<a class="headerlink" href="#synthesis-of-signal-x-using-the-sinusoidal-model" title="Permalink to this heading">¶</a></h3>
+<p>Synthesing signal for given frequencies with magnitude sinasodal tracks</p>
+</div>
+<div class="section" id="id35">
+<h3>input<a class="headerlink" href="#id35" title="Permalink to this heading">¶</a></h3>
+<p>fXt : frequency tracks - 2d-array- shape =(number of frames, number of sinasodal tracks)
+mXt : magnitude    -  same size of array as
+pXt : phases of sinusoids
+fs  :  sampling frequency
+overlap: overlap of consequitive frames (in samples)</p>
+</div>
+<div class="section" id="id36">
+<h3>output<a class="headerlink" href="#id36" title="Permalink to this heading">¶</a></h3>
+<p>y : 1d-array - synthesised signal</p>
+<p>Ref: <a class="reference external" href="https://www.coursera.org/learn/audio-signal-processing">https://www.coursera.org/learn/audio-signal-processing</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.frft">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">frft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/fractional_processes.py#L32-L127"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.frft" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="fractional-fourier-transform">
+<h3>Fractional Fourier Transform<a class="headerlink" href="#fractional-fourier-transform" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id37">
+<h3>input<a class="headerlink" href="#id37" title="Permalink to this heading">¶</a></h3>
+<p>x:  real signal
+alpha: value
+method=1, other methods to be implemented</p>
+</div>
+<div class="section" id="id38">
+<h3>output<a class="headerlink" href="#id38" title="Permalink to this heading">¶</a></h3>
+<p>Y: complex signal</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ifrft">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">ifrft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/fractional_processes.py#L129-L134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ifrft" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="inverse-fractional-fourier-transform">
+<h3>Inverse Fractional Fourier Transform<a class="headerlink" href="#inverse-fractional-fourier-transform" title="Permalink to this heading">¶</a></h3>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ffrft">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">ffrft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/fractional_processes.py#L157-L196"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ffrft" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="fast-fractional-fourier-transform">
+<h3>Fast Fractional Fourier Transform<a class="headerlink" href="#fast-fractional-fourier-transform" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>perfect reconstruction with iffrft</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id39">
+<h3>input<a class="headerlink" href="#id39" title="Permalink to this heading">¶</a></h3>
+<p>x:  real signal
+alpha: value</p>
+</div>
+<div class="section" id="id40">
+<h3>output<a class="headerlink" href="#id40" title="Permalink to this heading">¶</a></h3>
+<p>Y: complex signal</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.iffrft">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">iffrft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/fractional_processes.py#L199-L204"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.iffrft" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="inverse-fast-fractional-fourier-transform">
+<h3>Inverse Fast Fractional Fourier Transform<a class="headerlink" href="#inverse-fast-fractional-fourier-transform" title="Permalink to this heading">¶</a></h3>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.RFB">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">RFB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rcq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rav</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_averaging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/ramanujam_methods.py#L35-L119"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.RFB" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="ramanujan-filter-banks-for-estimation-and-tracking-of-periodicity">
+<h3>Ramanujan Filter Banks for Estimation and Tracking of Periodicity<a class="headerlink" href="#ramanujan-filter-banks-for-estimation-and-tracking-of-periodicity" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id41">
+<h3>input<a class="headerlink" href="#id41" title="Permalink to this heading">¶</a></h3>
+<p>x    = 1d array, sequence of signal
+Pmax = the largest expected period.
+Rcq  = Number of repeats in each Ramanujan filter
+Rav  = Number of repeats in each averaging filter
+Th   = Outputs of the RFB are thresholded to zero for all values less than Th*max(output)
+Penalt = penalty for each period shape=(len(Pmax)),</p>
+<blockquote>
+<div><p>If None, then set to 1, means no penalty</p>
+</div></blockquote>
+</div>
+<div class="section" id="id42">
+<h3>output<a class="headerlink" href="#id42" title="Permalink to this heading">¶</a></h3>
+<p>y = 2d array of shape = (len(x),Pmax), time vs period matrix, normalized</p>
+<p>if return_filters==True: also returns</p>
+<p>FR = list of Ramanujan Filters
+FA = list of Averaging Filters</p>
+<p>References:
+[1] S.V. Tenneti and P. P. Vaidyanathan, “Ramanujan Filter Banks for Estimation
+and Tracking of Periodicity”, Proc. IEEE Int. Conf. Acoust.
+Speech, and Signal Proc., Brisbane, April 2015.</p>
+<p>[2] P.P. Vaidyanathan and S.V. Tenneti, “Properties of Ramanujan Filter Banks”,
+Proc. European Signal Processing Conference, France, August 2015.</p>
+<p>Python impletation is done by using matlab code version from
+- <a class="reference external" href="http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/">http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.RFB_prange">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">RFB_prange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rcq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rav</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_filters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">apply_averaging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/ramanujam_methods.py#L405-L506"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.RFB_prange" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="id43">
+<h3>Ramanujan Filter Banks for Estimation and Tracking of Periodicity<a class="headerlink" href="#id43" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>for range of period given by Pmin and Pmax.</p></li>
+</ul>
+</div>
+<div class="section" id="id44">
+<h3>input<a class="headerlink" href="#id44" title="Permalink to this heading">¶</a></h3>
+<p>x    = 1d array, sequence of signal
+Pmin = the smallest expected period. (default=1)
+Pmax = the largest expected period.
+skip = int &gt;=1: if to skip period (default=1 –&gt; no skipping) (&gt;1 is not recomended)
+Rcq  = Number of repeats in each Ramanujan filter
+Rav  = Number of repeats in each averaging filter
+thr   = Outputs of the RFB are thresholded to zero for all values less than Th*max(output)
+Penalty = penalty for each period shape=(len(Pmax)),</p>
+<blockquote>
+<div><p>If None, then set to 1, means no penalty</p>
+</div></blockquote>
+<p>apply_averaging: bool, if False, no averaging is applied (deault=True)
+return_filters: bool, ifTrue, return FR - Ramanujan and FA - Averaging filters</p>
+</div>
+<div class="section" id="id45">
+<h3>output<a class="headerlink" href="#id45" title="Permalink to this heading">¶</a></h3>
+<p>y = 2d array of shape = (len(x),Pmax), time vs period matrix, normalized</p>
+<p>if return_filters==True: also returns</p>
+<p>FR = list of Ramanujan Filters
+FA = list of Averaging Filters</p>
+<p>References:
+[1] S.V. Tenneti and P. P. Vaidyanathan, “Ramanujan Filter Banks for Estimation
+and Tracking of Periodicity”, Proc. IEEE Int. Conf. Acoust.
+Speech, and Signal Proc., Brisbane, April 2015.</p>
+<p>[2] P.P. Vaidyanathan and S.V. Tenneti, “Properties of Ramanujan Filter Banks”,
+Proc. European Signal Processing Conference, France, August 2015.</p>
+<p>Python impletation is done by using matlab code version from
+- <a class="reference external" href="http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/">http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.Create_Dictionary">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">Create_Dictionary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Nmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rowSize</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Ramanujan'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/ramanujam_methods.py#L121-L183"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.Create_Dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="creating-dictionary">
+<h3>Creating Dictionary<a class="headerlink" href="#creating-dictionary" title="Permalink to this heading">¶</a></h3>
+</div>
+<div class="section" id="id46">
+<h3>input<a class="headerlink" href="#id46" title="Permalink to this heading">¶</a></h3>
+<p>Nmax    : maximum expected Period,
+rowSize : number of rows (e.g. samples in signal)
+method  : ‘Ramanujan’ ‘random’, ‘NaturalBasis’, ‘DFT’</p>
+</div>
+<div class="section" id="id47">
+<h3>output<a class="headerlink" href="#id47" title="Permalink to this heading">¶</a></h3>
+<p>A :  Matrix of (rowSize, q)</p>
+<p>The relevant paper is:
+[1] S.V. Tenneti and P. P. Vaidyanathan, “Nested Periodic Matrices and Dictionaries:</p>
+<blockquote>
+<div><p>New Signal Representations for Period Estimation”, IEEE Transactions on Signal
+Processing, vol.63, no.14, pp.3736-50, July, 2015.</p>
+</div></blockquote>
+<p>Python impletation is done by using matlab code version from
+- <a class="reference external" href="http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/">http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.PeriodStrength">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">PeriodStrength</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Pmax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Ramanujan'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cvxsol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/ramanujam_methods.py#L185-L263"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.PeriodStrength" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="computing-strength-of-periods">
+<h3>Computing strength of periods<a class="headerlink" href="#computing-strength-of-periods" title="Permalink to this heading">¶</a></h3>
+<p>for given signal x, using method and respective loss fun (e.g. l1, l2)</p>
+</div>
+<div class="section" id="inputs">
+<h3>inputs<a class="headerlink" href="#inputs" title="Permalink to this heading">¶</a></h3>
+<p>x   :  one dimentional sequence (signal)
+Pmax: largest expected period in the signal
+method: type of dictionary used to create transform matrix A</p>
+<blockquote>
+<div><p>: ‘Ramanujan’, ‘NaturalBasis’, ‘random’ or Farray (DFT)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>lambd: for penalty vector, to force towards lower (usually) or higher periods</dt><dd><p>: if 0, then penalty vector is 1, means no penalization
+: if &gt;0, then lambd is multiplied to penalty vector</p>
+</dd>
+</dl>
+<p>L : regularazation: L=1, minimize ||s||_1, L=2, ||s||_2</p>
+<dl class="simple">
+<dt>cvxsol: bool, wether to use cvxpy solver of matrix decomposition approach</dt><dd><p>: matrix decomposition approach works only for L=2
+: for L=1, use cvxpy as solver</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id48">
+<h3>output<a class="headerlink" href="#id48" title="Permalink to this heading">¶</a></h3>
+<p>period_energy: vecotor shape: (Pmax,): strength of each period</p>
+<p>Reference:
+[1] S.V. Tenneti and P. P. Vaidyanathan, “Nested Periodic Matrices and Dictionaries:</p>
+<blockquote>
+<div><p>New Signal Representations for Period Estimation”, IEEE Transactions on Signal
+Processing, vol.63, no.14, pp.3736-50, July, 2015.</p>
+</div></blockquote>
+<p>Python impletation is done by using matlab code version from
+- <a class="reference external" href="http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/">http://systems.caltech.edu/dsp/students/srikanth/Ramanujan/</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.RFB_example_1">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">RFB_example_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SNR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/ramanujam_methods.py#L265-L311"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.RFB_example_1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.RFB_example_2">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">RFB_example_2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">periods</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[3,</span> <span class="pre">7,</span> <span class="pre">11]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SNR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/ramanujam_methods.py#L313-L402"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.RFB_example_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.filterDC">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">filterDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialize_zero</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/processing.py#L108-L141"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.filterDC" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="filter-out-dc-component-remving-drift-using-recursive-iir-type-filter">
+<h3>Filter out DC component - Remving drift using Recursive (IIR type) filter<a class="headerlink" href="#filter-out-dc-component-remving-drift-using-recursive-iir-type-filter" title="Permalink to this heading">¶</a></h3>
+<blockquote>
+<div><p>y[n] = ((alpha-1)/alpha) * ( x[n] - x[n-1] -y[n-1])</p>
+<p>where y[-1] = x[0], x[-1] = x[0]
+resulting y[0] = 0</p>
+</div></blockquote>
+<p>implemenatation works for single (1d array) or multi-channel (2d array)
+input
+—–
+X : (vecctor) input signal single channel (n,) or multi-channel, channel axis should be 1 shape ~ (n,ch)</p>
+<dl class="simple">
+<dt>alpha: (scalar) filter coefficient, higher it is, more suppressed dc component (0 frequency component)</dt><dd><p>: with alpha=256, dc component is suppressed by 20 dB</p>
+</dd>
+<dt>initialize_zero: (bool): If True, running backgrpund b will be initialize it with x[0], resulting y[0] = 0</dt><dd><p>if False, b = 0, resulting y[0] ~ x[0], and slowly drifting towards zeros line
+- recommended to set True</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id49">
+<h3>output<a class="headerlink" href="#id49" title="Permalink to this heading">¶</a></h3>
+<p>Y : output vector, shape same as input X (n,) or (n,ch)</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.filterDC_sGolay">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">filterDC_sGolay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">127</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polyorder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deriv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'interp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_background</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/processing.py#L143-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.filterDC_sGolay" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="filter-out-dc-component-remving-drift-using-savitzky-golay-filter">
+<h3>Filter out DC component - Remving drift using Savitzky-Golay filter<a class="headerlink" href="#filter-out-dc-component-remving-drift-using-savitzky-golay-filter" title="Permalink to this heading">¶</a></h3>
+<p>Savitzky-Golay filter for multi-channels signal: From Scipy library</p>
+</div>
+<div class="section" id="id50">
+<h3>input<a class="headerlink" href="#id50" title="Permalink to this heading">¶</a></h3>
+<p>X : (vecctor) input signal single channel (n,) or multi-channel, channel axis should be 1 shape ~ (n,ch)
+window_length: should be an odd number
+others input parameters as same as in scipy.signal.savgol_filter</p>
+<blockquote>
+<div><p>:(polyorder=3, deriv=0, delta=1.0, mode=’interp’, cval=0.0)</p>
+</div></blockquote>
+</div>
+<div class="section" id="id51">
+<h3>output<a class="headerlink" href="#id51" title="Permalink to this heading">¶</a></h3>
+<p>Y : corrected signal
+Xm: background removed -  return only if return_background is True</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.filter_X">
+<span class="sig-prename descclassname"><span class="pre">spkit.</span></span><span class="sig-name descname"><span class="pre">filter_X</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">band</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.5]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">btype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'highpass'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ftype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'filtfilt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_joblib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/core/processing.py#L169-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.filter_X" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="buttorworth-filtering-basic-filtering">
+<h3>Buttorworth filtering -  basic filtering<a class="headerlink" href="#buttorworth-filtering-basic-filtering" title="Permalink to this heading">¶</a></h3>
+<p>X : (vecctor) input signal single channel (n,) or multi-channel, channel axis should be 1 shape ~ (n,ch)</p>
+<p>band: cut of frequency, for lowpass and highpass, band is list of one, for bandpass list of two numbers
+btype: filter type
+order: order of filter
+ftype: filtering approach type, filtfilt or lfilter,</p>
+<blockquote>
+<div><p>: lfilter is causal filter, which introduces delaye, filtfilt does not introduce any delay, but it is non-causal filtering</p>
+</div></blockquote>
+<p>Xf: filtered signal of same size as X</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.eeg.ATAR">
+<span class="sig-prename descclassname"><span class="pre">spkit.eeg.</span></span><span class="sig-name descname"><span class="pre">ATAR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'db3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ipr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IPR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[25,</span> <span class="pre">75]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">est_wmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OptMode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'soft'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wpd_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'symmetric'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wpd_maxlevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['hamming',</span> <span class="pre">True]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hopesize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ReconMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'custom'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packetwise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WPD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_joblib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/eeg/atar_algorithm.py#L438-L515"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.eeg.ATAR" title="Permalink to this definition">¶</a></dt>
+<dd><p>.
+ATAR: - Automatic and Tunable Artifact Removal Algorithm
+========================================================</p>
+<p>Apply ATAR on short windows of signal (multiple channels - if provided on axis 1:):
+Signal is decomposed in smaller overlapping windows and reconstructed after correcting using overlap-add method.
+——
+for more details, check:
+Ref: Bajaj, Nikesh, et al. “Automatic and tunable algorithm for EEG artifact removal using wavelet decomposition with applications in predictive modeling during auditory tasks.” Biomedical Signal Processing and Control 55 (2020): 101624.
+—————-</p>
+<div class="section" id="id52">
+<h3>input<a class="headerlink" href="#id52" title="Permalink to this heading">¶</a></h3>
+<p>X: input multi-channel signal of shape (n,ch)</p>
+<p>Wavelet family:
+wv = [‘db3’…..’db38’, ‘sym2…..sym20’, ‘coif1…..coif17’, ‘bior1.1….bior6.8’, ‘rbio1.1…rbio6.8’, ‘dmey’]</p>
+<blockquote>
+<div><p>:’db3’(default)</p>
+</div></blockquote>
+<p>Threshold Computation method:
+thr_method : None (default), ‘ipr’</p>
+<blockquote>
+<div><p>: None: fixed threshold theta_a is applied
+: ipr : applied with theta_a, bf , gf, beta, k1, k2 and OptMode
+: theta_b = bf*theta_a
+: theta_g = gf*theta_a</p>
+</div></blockquote>
+<p>Operating modes:
+OptMode = [‘soft’,’elim’,’linAtten’]</p>
+<blockquote>
+<div><p>: default ‘soft’
+: use ‘elim’ with globalgood</p>
+</div></blockquote>
+<p>Wavelet Decomposition modes:
+wpd_mode = [‘zero’, ‘constant’, ‘symmetric’, ‘periodic’, ‘smooth’, ‘periodization’]</p>
+<blockquote>
+<div><p>default ‘symmetric’</p>
+</div></blockquote>
+<p>Reconstruction Method - Overlap-Add method
+ReconMethod :  None, ‘custom’, ‘HamWin’
+for ‘custom’: window[0] is used and applied after denoising is window[1] is True else
+windowing applied before denoising</p>
+</div>
+<div class="section" id="id53">
+<h3>output<a class="headerlink" href="#id53" title="Permalink to this heading">¶</a></h3>
+<p>XR: corrected signal of same shape as input X</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.eeg.ATAR_1Ch">
+<span class="sig-prename descclassname"><span class="pre">spkit.eeg.</span></span><span class="sig-name descname"><span class="pre">ATAR_1Ch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'db3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ipr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IPR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[25,</span> <span class="pre">75]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">est_wmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OptMode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'soft'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wpd_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'symmetric'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wpd_maxlevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['hamming',</span> <span class="pre">True]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hopesize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ReconMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'custom'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packetwise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WPD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/eeg/atar_algorithm.py#L219-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.eeg.ATAR_1Ch" title="Permalink to this definition">¶</a></dt>
+<dd><p>‘’
+ATAR: - Automatic and Tunable Artifact Removal Algorithm
+========================================================</p>
+<p>Apply ATAR on short windows of signal (single channel):</p>
+<p>Signal is decomposed in smaller overlapping windows and reconstructed after correcting using overlap-add method.</p>
+<hr class="docutils" />
+<dl class="simple">
+<dt>Wfilter(x,wv=’db3’,method=None,IPR=[25,75],beta=0.1,k1=None,k2 =100,</dt><dd><p>theta_a=np.inf,bf=2,gf=0.8,OptMode =’soft’,factor=1.0,showPlot=False,wpd_mode=’symmetric’,wpd_maxlevel=None)</p>
+</dd>
+</dl>
+<div class="section" id="id54">
+<h3>input<a class="headerlink" href="#id54" title="Permalink to this heading">¶</a></h3>
+<p>X: input single-channel signal of shape (n,)</p>
+<p>Threshold Computation method:
+method : None (default), ‘ipr’</p>
+<blockquote>
+<div><p>: provided with theta_a, bf , gf
+: theta_b = bf*theta_a
+: theta_g = gf*theta_a</p>
+</div></blockquote>
+<p>Operating modes:
+OptMode = [‘soft’,’elim’,’linAtten’]</p>
+<blockquote>
+<div><p>: default ‘soft’
+: use ‘elim’ with global</p>
+</div></blockquote>
+<p>Wavelet Decomposition modes:
+wpd_mode = [‘zero’, ‘constant’, ‘symmetric’, ‘periodic’, ‘smooth’, ‘periodization’]</p>
+<blockquote>
+<div><p>default ‘symmetric’</p>
+</div></blockquote>
+<p>Wavelet family:
+wv = [‘db3’…..’db38’, ‘sym2…..sym20’, ‘coif1…..coif17’, ‘bior1.1….bior6.8’, ‘rbio1.1…rbio6.8’, ‘dmey’]</p>
+<blockquote>
+<div><p>:’db3’(default)</p>
+</div></blockquote>
+<p>Reconstruction Methon
+ReconMethod :  None, ‘custom’, ‘HamWin’
+for ‘custom’: window[0] is used and applied after denoising is window[1] is True else
+windowing applied before denoising</p>
+</div>
+<div class="section" id="id55">
+<h3>output<a class="headerlink" href="#id55" title="Permalink to this heading">¶</a></h3>
+<p>XR: corrected signal of same shape as input X</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.eeg.ATAR_mCh">
+<span class="sig-prename descclassname"><span class="pre">spkit.eeg.</span></span><span class="sig-name descname"><span class="pre">ATAR_mCh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'db3'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thr_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ipr'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IPR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[25,</span> <span class="pre">75]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">est_wmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">OptMode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'soft'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wpd_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'symmetric'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wpd_maxlevel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['hamming',</span> <span class="pre">True]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hopesize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ReconMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'custom'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">packetwise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WPD</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_joblib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/eeg/atar_algorithm.py#L359-L436"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.eeg.ATAR_mCh" title="Permalink to this definition">¶</a></dt>
+<dd><p>.
+ATAR: - Automatic and Tunable Artifact Removal Algorithm
+========================================================
+Apply ATAR on short windows of signal (multiple channels:):</p>
+<div class="section" id="signal-is-decomposed-in-smaller-overlapping-windows-and-reconstructed-after-correcting-using-overlap-add-method">
+<h3>Signal is decomposed in smaller overlapping windows and reconstructed after correcting using overlap-add method.<a class="headerlink" href="#signal-is-decomposed-in-smaller-overlapping-windows-and-reconstructed-after-correcting-using-overlap-add-method" title="Permalink to this heading">¶</a></h3>
+<p>for more details, check:
+Ref: Bajaj, Nikesh, et al. “Automatic and tunable algorithm for EEG artifact removal using wavelet decomposition with applications in predictive modeling during auditory tasks.” Biomedical Signal Processing and Control 55 (2020): 101624.
+—————-</p>
+</div>
+<div class="section" id="id56">
+<h3>input<a class="headerlink" href="#id56" title="Permalink to this heading">¶</a></h3>
+<p>X: input multi-channel signal of shape (n,ch)</p>
+<p>Wavelet family:
+wv = [‘db3’…..’db38’, ‘sym2…..sym20’, ‘coif1…..coif17’, ‘bior1.1….bior6.8’, ‘rbio1.1…rbio6.8’, ‘dmey’]</p>
+<blockquote>
+<div><p>:’db3’(default)</p>
+</div></blockquote>
+<p>Threshold Computation method:
+thr_method : None (default), ‘ipr’</p>
+<blockquote>
+<div><p>: None: fixed threshold theta_a is applied
+: ipr : applied with theta_a, bf , gf, beta, k1, k2 and OptMode
+: theta_b = bf*theta_a
+: theta_g = gf*theta_a</p>
+</div></blockquote>
+<p>Operating modes:
+OptMode = [‘soft’,’elim’,’linAtten’]</p>
+<blockquote>
+<div><p>: default ‘soft’
+: use ‘elim’ with globalgood</p>
+</div></blockquote>
+<p>Wavelet Decomposition modes:
+wpd_mode = [‘zero’, ‘constant’, ‘symmetric’, ‘periodic’, ‘smooth’, ‘periodization’]</p>
+<blockquote>
+<div><p>default ‘symmetric’</p>
+</div></blockquote>
+<p>Reconstruction Method - Overlap-Add method
+ReconMethod :  None, ‘custom’, ‘HamWin’
+for ‘custom’: window[0] is used and applied after denoising is window[1] is True else
+windowing applied before denoising</p>
+</div>
+<div class="section" id="id57">
+<h3>output<a class="headerlink" href="#id57" title="Permalink to this heading">¶</a></h3>
+<p>XR: corrected signal of same shape as input X</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.eeg.ICA_filtering">
+<span class="sig-prename descclassname"><span class="pre">spkit.eeg.</span></span><span class="sig-name descname"><span class="pre">ICA_filtering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ICA_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'extended-infomax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kur_thr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr_thr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AF_ch_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">13]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F_ch_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">11,</span> <span class="pre">12]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['hamming',</span> <span class="pre">True]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hopesize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">winMeth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'custom'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/eeg/artifact_correction.py#L33-L111"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.eeg.ICA_filtering" title="Permalink to this definition">¶</a></dt>
+<dd><div class="section" id="id58">
+<h3>input<a class="headerlink" href="#id58" title="Permalink to this heading">¶</a></h3>
+<p>X: input signal (n,ch) with n samples and ch channels
+winsize:  window size to process, if None, entire signal is used at once
+ICAMed = [‘fastICA’,’infomax’,’extended-infomax’,’picard’]</p>
+</div>
+<div class="section" id="kurtosis-based-artifacts-mostly-for-motion-artifacts">
+<h3>(1) Kurtosis based artifacts - mostly for motion artifacts<a class="headerlink" href="#kurtosis-based-artifacts-mostly-for-motion-artifacts" title="Permalink to this heading">¶</a></h3>
+<dl class="simple">
+<dt>kur_thr: (default 2) threshold on kurtosis of IC commponents to remove, higher it is, more peaky component is selected</dt><dd><p>: +ve int value</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="correlation-based-index-cbi-for-eye-movement-artifacts">
+<h3>(2) Correlation Based Index (CBI) for eye movement artifacts<a class="headerlink" href="#correlation-based-index-cbi-for-eye-movement-artifacts" title="Permalink to this heading">¶</a></h3>
+<p>for applying CBI method, index of prefrontal (AF - First Layer of electrodes towards frontal lobe) and frontal lobe (F - second layer of electrodes)channels needs to be provided.
+For case of 14-channels Emotiv Epoc
+ch_names = [‘AF3’,’F7’,’F3’,’FC5’,’T7’,’P7’,’O1’,’O2’,’P8’,’T8’,’FC6’,’F4’,’F8’,’AF4’]
+PreProntal Channels =[‘AF3’,’AF4’], Fronatal Channels = [‘F7’,’F3’,’F4’,’F8’]
+AF_ch_index =[0,13] :  (AF - First Layer of electrodes towards frontal lobe)
+F_ch_index =[1,2,11,12] : (F - second layer of electrodes)
+if AF_ch_index or F_ch_index is None, CBI is not applied</p>
+</div>
+<div class="section" id="correlation-of-any-independent-component-with-many-eeg-channels">
+<h3>(3) Correlation of any independent component with many EEG channels<a class="headerlink" href="#correlation-of-any-independent-component-with-many-eeg-channels" title="Permalink to this heading">¶</a></h3>
+<p>If any indepentdent component is correlated fo corr_thr% (80%) of elecctrodes, is considered to be artifactual
+– Similar like CBI, except, not comparing fronatal and prefrontal but all
+corr_thr: (deafult 0.8) threshold to consider correlation, higher the value less IC are removed and vise-versa</p>
+<blockquote>
+<div><p>: float [0-1],
+: if None, this  is not applied</p>
+</div></blockquote>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.eeg.ICAremoveArtifact">
+<span class="sig-prename descclassname"><span class="pre">spkit.eeg.</span></span><span class="sig-name descname"><span class="pre">ICAremoveArtifact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ICA_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'extended-infomax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">corr_thr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kur_thr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AF_ch_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">13]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">F_ch_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">11,</span> <span class="pre">12]</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/eeg/artifact_correction.py#L228-L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.eeg.ICAremoveArtifact" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ml.LR">
+<span class="sig-prename descclassname"><span class="pre">spkit.ml.</span></span><span class="sig-name descname"><span class="pre">LR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polyfit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FeatureNormalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/ml/LogisticRegression.py#L20-L167"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ml.LR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ml.LogisticRegression">
+<span class="sig-prename descclassname"><span class="pre">spkit.ml.</span></span><span class="sig-name descname"><span class="pre">LogisticRegression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polyfit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FeatureNormalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'l2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/ml/LogisticRegression.py#L169-L579"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ml.LogisticRegression" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ml.NaiveBayes">
+<span class="sig-prename descclassname"><span class="pre">spkit.ml.</span></span><span class="sig-name descname"><span class="pre">NaiveBayes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/ml/Probabilistic.py#L18-L141"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ml.NaiveBayes" title="Permalink to this definition">¶</a></dt>
+<dd><p>The Gaussian Naive Bayes classifier.
+Based on the bayes rule</p>
+<p>X::shape (n, nf), n samples with nf features
+y::shape (n,) or (n,1)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ml.ClassificationTree">
+<span class="sig-prename descclassname"><span class="pre">spkit.ml.</span></span><span class="sig-name descname"><span class="pre">ClassificationTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_samples_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_impurity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholdFromMean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/ml/Trees.py#L815-L887"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ml.ClassificationTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Super class of RegressionTree and ClassificationTree.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spkit.ml.RegressionTree">
+<span class="sig-prename descclassname"><span class="pre">spkit.ml.</span></span><span class="sig-name descname"><span class="pre">RegressionTree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_samples_split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_impurity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholdFromMean</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/Nikeshbajaj/spkit/blob/0.0.9.4/spkit/ml/Trees.py#L889-L943"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spkit.ml.RegressionTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Super class of RegressionTree and ClassificationTree.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="list-of-all-functions">
+<h2>List of all functions<a class="headerlink" href="#list-of-all-functions" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spkit</span><span class="o">.</span><span class="n">entropy</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">mutual_Info</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_joint</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_cond</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_cross</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_kld</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_spectral</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_sample</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_approx</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_svd</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_permutation</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">dispersion_entropy</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">dispersion_entropy_multiscale_refined</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spkit</span><span class="o">.</span><span class="n">entropy</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">mutual_Info</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_joint</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_cond</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_cross</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_kld</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_spectral</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_sample</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_approx</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_svd</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">entropy_permutation</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">dispersion_entropy</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">dispersion_entropy_multiscale_refined</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">spkit</span><span class="o">.</span><span class="n">cwt</span><span class="o">.</span><span class="n">ScalogramCWT</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">cwt</span><span class="o">.</span><span class="n">compare_cwt_example</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">dft_analysis</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">dft_synthesis</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">stft_analysis</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">stft_synthesis</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">sineModel_analysis</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">sineModel_synthesis</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">f0_detection</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">peak_detection</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">peak_interp</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">TWM_f0</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">TWM_algo</span>
+
+
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">frft</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">ifrft</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">ffrft</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">iffrft</span>
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">HistPlot</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">Mu_law</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">A_law</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">bin_width</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">binSize_FD</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">Quantize</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">plotJointEntropyXY</span>
+
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">low_resolution</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">cdf_mapping</span>
+
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">SVD</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">ICA</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">infomax</span>
+
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">filterDC</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">filterDC_sGolay</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">filter_X</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">Periodogram</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">getStats</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">getQuickStats</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">OutLiers</span>
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">wavelet_filtering</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">wavelet_filtering_win</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">WPA_temporal</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">WPA_coeff</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">WPA_plot</span>
+
+
+<span class="n">spkit</span><span class="o">.</span><span class="n">RFB</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">RFB_prange</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">Create_Dictionary</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">PeriodStrength</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">RFB_example_1</span>
+<span class="n">spkit</span><span class="o">.</span><span class="n">RFB_example_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">API docs</a><ul>
+<li><a class="reference internal" href="#entropy-functions">Entropy Functions</a><ul>
+<li><a class="reference internal" href="#spkit.entropy"><code class="docutils literal notranslate"><span class="pre">entropy()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.mutual_Info"><code class="docutils literal notranslate"><span class="pre">mutual_Info()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.dispersion_entropy"><code class="docutils literal notranslate"><span class="pre">dispersion_entropy()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.dispersion_entropy_multiscale_refined"><code class="docutils literal notranslate"><span class="pre">dispersion_entropy_multiscale_refined()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#information-theory-module">Information Theory Module</a><ul>
+<li><a class="reference internal" href="#information-theory-techniques">Information Theory techniques</a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.A_law"><code class="docutils literal notranslate"><span class="pre">A_law()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.Mu_law"><code class="docutils literal notranslate"><span class="pre">Mu_law()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.Quantize"><code class="docutils literal notranslate"><span class="pre">Quantize()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.TD_Embed"><code class="docutils literal notranslate"><span class="pre">TD_Embed()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.binSize_FD"><code class="docutils literal notranslate"><span class="pre">binSize_FD()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.bin_width"><code class="docutils literal notranslate"><span class="pre">bin_width()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy"><code class="docutils literal notranslate"><span class="pre">entropy()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_approx"><code class="docutils literal notranslate"><span class="pre">entropy_approx()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_cond"><code class="docutils literal notranslate"><span class="pre">entropy_cond()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_cross"><code class="docutils literal notranslate"><span class="pre">entropy_cross()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_joint"><code class="docutils literal notranslate"><span class="pre">entropy_joint()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_kld"><code class="docutils literal notranslate"><span class="pre">entropy_kld()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_permutation"><code class="docutils literal notranslate"><span class="pre">entropy_permutation()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_sample"><code class="docutils literal notranslate"><span class="pre">entropy_sample()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_spectral"><code class="docutils literal notranslate"><span class="pre">entropy_spectral()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.entropy_svd"><code class="docutils literal notranslate"><span class="pre">entropy_svd()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.mutual_Info"><code class="docutils literal notranslate"><span class="pre">mutual_Info()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.plotJointEntropyXY"><code class="docutils literal notranslate"><span class="pre">plotJointEntropyXY()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.core.infotheory.quantize_FD"><code class="docutils literal notranslate"><span class="pre">quantize_FD()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wavelet-analysis">Wavelet Analysis</a><ul>
+<li><a class="reference internal" href="#spkit.cwt.ScalogramCWT"><code class="docutils literal notranslate"><span class="pre">ScalogramCWT()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#analysis-synthesis-models">Analysis &amp; Synthesis Models</a><ul>
+<li><a class="reference internal" href="#spkit.dft_analysis"><code class="docutils literal notranslate"><span class="pre">dft_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.dft_synthesis"><code class="docutils literal notranslate"><span class="pre">dft_synthesis()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.stft_analysis"><code class="docutils literal notranslate"><span class="pre">stft_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.stft_synthesis"><code class="docutils literal notranslate"><span class="pre">stft_synthesis()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.sineModel_analysis"><code class="docutils literal notranslate"><span class="pre">sineModel_analysis()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.sineModel_synthesis"><code class="docutils literal notranslate"><span class="pre">sineModel_synthesis()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.frft"><code class="docutils literal notranslate"><span class="pre">frft()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ifrft"><code class="docutils literal notranslate"><span class="pre">ifrft()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ffrft"><code class="docutils literal notranslate"><span class="pre">ffrft()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.iffrft"><code class="docutils literal notranslate"><span class="pre">iffrft()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.RFB"><code class="docutils literal notranslate"><span class="pre">RFB()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.RFB_prange"><code class="docutils literal notranslate"><span class="pre">RFB_prange()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.Create_Dictionary"><code class="docutils literal notranslate"><span class="pre">Create_Dictionary()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.PeriodStrength"><code class="docutils literal notranslate"><span class="pre">PeriodStrength()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.RFB_example_1"><code class="docutils literal notranslate"><span class="pre">RFB_example_1()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.RFB_example_2"><code class="docutils literal notranslate"><span class="pre">RFB_example_2()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.filterDC"><code class="docutils literal notranslate"><span class="pre">filterDC()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.filterDC_sGolay"><code class="docutils literal notranslate"><span class="pre">filterDC_sGolay()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.filter_X"><code class="docutils literal notranslate"><span class="pre">filter_X()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.eeg.ATAR"><code class="docutils literal notranslate"><span class="pre">ATAR()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.eeg.ATAR_1Ch"><code class="docutils literal notranslate"><span class="pre">ATAR_1Ch()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.eeg.ATAR_mCh"><code class="docutils literal notranslate"><span class="pre">ATAR_mCh()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.eeg.ICA_filtering"><code class="docutils literal notranslate"><span class="pre">ICA_filtering()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.eeg.ICAremoveArtifact"><code class="docutils literal notranslate"><span class="pre">ICAremoveArtifact()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.LR"><code class="docutils literal notranslate"><span class="pre">LR()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.LogisticRegression"><code class="docutils literal notranslate"><span class="pre">LogisticRegression()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.NaiveBayes"><code class="docutils literal notranslate"><span class="pre">NaiveBayes()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.ClassificationTree"><code class="docutils literal notranslate"><span class="pre">ClassificationTree()</span></code></a></li>
+<li><a class="reference internal" href="#spkit.ml.RegressionTree"><code class="docutils literal notranslate"><span class="pre">RegressionTree()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#list-of-all-functions">List of all functions</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pylfsr.html"
+                          title="previous chapter">Link to pylfsr documentation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="changelog.html"
+                          title="next chapter">ChangeLog</a></p>
+  </div><div>
+<h3>Quick links</h3>
+<ul>
+<li><a href="https://spkit.github.io"><img src="../_static/spkitlogo5.png" height="16" width="16" alt="" /> Homepage</a></li>
+<li><a href="https://github.com/Nikeshbajaj/spkit/fork"><img src="../_static/github_logo1.png" height="16" width="16" alt="" /> Fork me on Github</a></li>
+<li><a href="https://groups.google.com/g/spkit"><img src="../_static/comments_2.png" height="16" width="16" alt="" /> Discussion Group</a></li>
+<li><a href="https://spkit.github.io/examples/"><img src="../_static/spkitlogo6.png" height="16" width="16" alt="" /> Examples Gellary</a></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changelog.html" title="ChangeLog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pylfsr.html" title="Link to pylfsr documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API docs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2022, Nikesh Bajaj.
+      Last updated on Nov 12, 2022.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

@@ -1,25 +1,26 @@
-Ramanjum Filter Banks  
-=====================
+==========================================
+**Ramanujan Filter Banks**
+==========================================
 
-Period estimation using RFB - (spkit version 0.0.9.4) 
-----------------------------------------------------
+Period estimation using RFB - (spkit version 0.0.9.4)
+------------------------------------------------------------------
 
 Finding the hidden patterns that repeats
 
 
 Single pattern with period of 10
-----------
+----------------------------------
 
 Same example as author has shown
 
 ::
-  
+
   import numpy as np
   import matplotlib.pyplot as plt
   import scipy.linalg as LA
   import spkit as sp
-  
-  
+
+
   seed = 10
   np.random.seed(seed)
   period = 10
@@ -68,33 +69,33 @@ Same example as author has shown
   plt.show()
 
   print('top 10 periods: ',np.argsort(np.sum(y,0))[::-1][:10]+1)
-  
-  
+
+
 .. image:: https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/RFB_ex1.1.png
    :width: 600
 .. image:: https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/RFB_ex1.2.png
    :width: 600
 .. image:: https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/RFB_ex1.3.png
    :width: 300
- 
- 
- 
+
+
+
 top 10 periods:  [10  5 11 18 17 16 15 14 13 12]
- 
- 
+
+
 Multiple pattern with periods of 3,7 and 10
--------------------
+-------------------------------------------
 
 Same example as author has shown
 
 ::
-  
+
   import numpy as np
   import matplotlib.pyplot as plt
   import scipy.linalg as LA
   import spkit as sp
-  
-  
+
+
   np.random.seed(15)
   #periods    = [3,7,11]
   #signal_length = 100
@@ -114,7 +115,7 @@ Same example as author has shown
   noise_power = 10**(-1*SNR/20)
   noise *= noise_power
   x_noise = x + noise
-  
+
   plt.figure(figsize=(15,3))
   plt.plot(x,label='signal: x')
   plt.plot(x_noise, label='signal+noise: x_noise')
@@ -185,8 +186,3 @@ Same example as author has shown
   plt.ylabel('| X |')
   plt.xlabel(r'frequency $\times$ ($\omega$/2)   ~   1/period ')
   plt.show()
-
-
-
-
-

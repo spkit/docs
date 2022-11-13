@@ -5,11 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Information Theory for Real-Valued signals &#8212; SpKit</title>
+    <title>Information Theory for Real-Valued signals &#8212; Documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/_static/css/basic.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -17,14 +16,15 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/design-tabs.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within SpKit"
+          title="Search within Documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/spkitlogo7.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dispersion Entropy" href="dispersion_entropy.html" />
-    <link rel="prev" title="Links:" href="installation.html" />
+    <link rel="prev" title="Getting Started" href="installation.html" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>SpKit &#8212; Signal Processing Toolkit</title>
@@ -78,7 +78,7 @@
 
     </script>
 
-<script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript">
   (function($) {
       $(function() {
@@ -115,7 +115,7 @@
               .jcarouselPagination();
       });
   })(jQuery);
-  </script>
+  </script> -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -138,17 +138,31 @@
 
 
   <div class=related-wrapper>
-    <div class="related" role="navigation" aria-label="related navigation" background-color="#ffff">
+    <div class="related" role="navigation" aria-label="related navigation">
     <ul>
     <li><a href="https://spkit.github.io">Home</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">User Guide</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Examples</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Tutorials</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Updates</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">About</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/userguide">User Guide</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/docs">Documentation</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/examples">Examples</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/tutorials">Tutorials</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/updates">Updates</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/about">About</a> |&nbsp;</li>
+    <li class="right" style="margin-right: 20px"><a href="#">Back to top</a> |&nbsp;</li>
+    <li class="right"><a href=".././py-modindex.html" title="Python Modele Index">module</a> |&nbsp;</li>
+    <li class="right"><a href=".././genindex.html" title="General Index" accesskey="I">index</a> |&nbsp;</li>
     </ul>
     </div>
   </div>
+  <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59299155-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-59299155-3');
+  </script>
 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -164,9 +178,9 @@
           <a href="dispersion_entropy.html" title="Dispersion Entropy"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="installation.html" title="Links:"
+          <a href="installation.html" title="Getting Started"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Information Theory for Real-Valued signals</a></li> 
       </ul>
     </div>  
@@ -184,10 +198,11 @@ it is a little different, because of infinite set of amplitude values. For which
 <p><strong>*Following Entropy functions compute entropy based the on the sample distribuation, which by default consider process to be IID (Independent Identical Disstribuation) - which means no temporal dependency.*</strong></p>
 <p><strong>*For temporal dependency (non-IID) signals, Spectral, Sample, Aproximate, SVD and Dispersion Entropy functions can be used. Which are discribed below*</strong></p>
 <div class="section" id="entropy-of-real-valued-signal-iid">
-<h2>Entropy of real-valued signal  (~ IID)<a class="headerlink" href="#entropy-of-real-valued-signal-iid" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="id1">
-<h3><a class="reference external" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_example.ipynb">View in Jupyter-Notebook</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
-<a class="reference external image-reference" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_example.ipynb"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" class="align-right" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" width="200" /></a>
+<h2><strong>Entropy of real-valued signal  (~ IID)</strong><a class="headerlink" href="#entropy-of-real-valued-signal-iid" title="Permalink to this heading">¶</a></h2>
+<a class="reference external image-reference" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_example.ipynb"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" class="align-right" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" width="150" /></a>
+<p><a class="reference external" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_example.ipynb">**View in Jupyter-Notebook**</a></p>
+<hr class="docutils" />
+<p>Let’s first start with two signals, (two time series), x with uniform distribution, i.e., x ~ U(), and y with normal distribution, i.e., y ~ N()</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
@@ -205,12 +220,13 @@ it is a little different, because of infinite set of amplitude values. For which
 </pre></div>
 </div>
 <img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/entropy_12.jpg" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/entropy_12.jpg" />
-</div>
 <div class="section" id="shannan-entropy">
 <h3>Shannan entropy<a class="headerlink" href="#shannan-entropy" title="Permalink to this heading">¶</a></h3>
+<p>Shannon entropy can be computed as follow;</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Shannan entropy</span>
-<span class="n">H_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">H_y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">H_x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">H_y</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shannan entropy&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entropy of x: H(x) = &#39;</span><span class="p">,</span><span class="n">H_x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Entropy of y: H(y) = &#39;</span><span class="p">,</span><span class="n">H_y</span><span class="p">)</span>
@@ -222,8 +238,9 @@ it is a little different, because of infinite set of amplitude values. For which
 </pre></div>
 </div>
 </div>
-<div class="section" id="renyi-entropy-e-g-collision-entropy">
-<h3>Rényi entropy  (e.g. Collision Entropy)<a class="headerlink" href="#renyi-entropy-e-g-collision-entropy" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="renyi-entropy">
+<h3>Rényi entropy<a class="headerlink" href="#renyi-entropy" title="Permalink to this heading">¶</a></h3>
+<p>Rényi entropy, also known as Collision Entropy. It is generalized form entropy, where shannon entropy is special case with alpha=1.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Rényi entropy</span>
 <span class="n">Hr_x</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">Hr_y</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -238,17 +255,23 @@ it is a little different, because of infinite set of amplitude values. For which
 </pre></div>
 </div>
 </div>
-<div class="section" id="mutual-information-joint-entropy">
-<h3>Mutual Information &amp; Joint Entropy<a class="headerlink" href="#mutual-information-joint-entropy" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="mutual-information">
+<h3>Mutual Information<a class="headerlink" href="#mutual-information" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_xy</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">mutual_Info</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mutual Information I(x,y) = &#39;</span><span class="p">,</span><span class="n">I_xy</span><span class="p">)</span>
-
-<span class="n">H_xy</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_joint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Joint Entropy H(x,y) = &#39;</span><span class="p">,</span><span class="n">H_xy</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Joint</span> <span class="n">Entropy</span> <span class="n">H</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">9.439792556949234</span>
-<span class="n">Mutual</span> <span class="n">Information</span> <span class="n">I</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">0.05934937774825322</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="joint-entropy">
+<h3>Joint Entropy<a class="headerlink" href="#joint-entropy" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_xy</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_joint</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Joint Entropy H(x,y) = &#39;</span><span class="p">,</span><span class="n">H_xy</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mutual</span> <span class="n">Information</span> <span class="n">I</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">0.05934937774825322</span>
 </pre></div>
 </div>
 </div>
@@ -260,75 +283,310 @@ it is a little different, because of infinite set of amplitude values. For which
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Conditional Entropy of : H(y|x) = &#39;</span><span class="p">,</span><span class="n">H_y1x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Conditional</span> <span class="n">Entropy</span> <span class="n">of</span> <span class="p">:</span> <span class="n">H</span><span class="p">(</span><span class="n">x</span><span class="o">|</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">4.398768639379814</span>
-<span class="n">Conditional</span> <span class="n">Entropy</span> <span class="n">of</span> <span class="p">:</span> <span class="n">H</span><span class="p">(</span><span class="n">y</span><span class="o">|</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">4.9816745398211655</span>
+<dl class="simple">
+<dt>output:</dt><dd><p>Conditional Entropy of : H(x|y) =  4.398768639379814
+Conditional Entropy of : H(y|x) =  4.9816745398211655</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="cross-entropy">
+<h3>Cross entropy<a class="headerlink" href="#cross-entropy" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_xy_cross</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_cross</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cross Entropy of : H(x,y) = :&#39;</span><span class="p">,</span><span class="n">H_xy_cross</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Cross</span> <span class="n">Entropy</span> <span class="n">of</span> <span class="p">:</span> <span class="n">H</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="p">:</span> <span class="mf">11.591688735915701</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="cross-entropy-kullbackleibler-divergence">
-<h3>Cross entropy &amp; Kullback–Leibler divergence<a class="headerlink" href="#cross-entropy-kullbackleibler-divergence" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_xy_cross</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_cross</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">D_xy</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_kld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cross Entropy of : H(x,y) = :&#39;</span><span class="p">,</span><span class="n">H_xy_cross</span><span class="p">)</span>
+<div class="section" id="kullbackleibler-divergence">
+<h3>Kullback–Leibler divergence<a class="headerlink" href="#kullbackleibler-divergence" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D_xy</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_kld</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kullback–Leibler divergence : Dkl(x,y) = :&#39;</span><span class="p">,</span><span class="n">D_xy</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Cross Entropy of : H(x,y) = : 11.591688735915701
-Kullback–Leibler divergence : Dkl(x,y) = : 4.203058010473213
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Kullback–Leibler divergence : Dkl(x,y) = : 4.203058010473213
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="entropy-of-real-valued-signal-non-iid">
-<h2>Entropy of real-valued signal  (~ non-IID)<a class="headerlink" href="#entropy-of-real-valued-signal-non-iid" title="Permalink to this heading">¶</a></h2>
+<h2><strong>Entropy of real-valued signal  (~ non-IID)</strong><a class="headerlink" href="#entropy-of-real-valued-signal-non-iid" title="Permalink to this heading">¶</a></h2>
+<p>For following section, we will consider three different signals to compare the Entropy,</p>
+<ul class="simple">
+<li><p>x1 ~ <span class="math notranslate nohighlight">\(cos(2\pi 10t)+cos(2\pi 20t)+cos(2\pi 30t)\)</span>   - sinasodal signal with three frequency componets</p></li>
+<li><p>x2 ~ <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span> -  random gaussian signal with zero mean and sd=1</p></li>
+<li><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span> -  random signal with uniform distribution ranges from 0 to 1</p></li>
+</ul>
 <div class="section" id="spectral-entropy">
 <h3>Spectral Entropy<a class="headerlink" href="#spectral-entropy" title="Permalink to this heading">¶</a></h3>
-<p>Though spectral entropy compute the entropy of frequency components cosidering that frequency distribuation is ~ IID, However, each frquency component has a temporal characterstics, so this is an indirect way to considering the temporal dependency of a signal</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_se</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fs</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;fft&#39;</span><span class="p">)</span>
-<span class="n">H_se</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">fs</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">)</span>
+<p>Though spectral entropy compute the entropy of frequency components considering that frequency distribution is ~ IID, however, each frequency component has a temporal characteristics, so this is an indirect way to considering the temporal dependency of a signal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">/</span><span class="n">fs</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">10</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">30</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">20</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span>
+
+
+<span class="n">Hx1_se</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">,</span><span class="n">bining</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">Hx2_se</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">,</span><span class="n">bining</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">Hx3_se</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">,</span><span class="n">bining</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="n">Hx1_se_n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">,</span><span class="n">bining</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Hx2_se_n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">,</span><span class="n">bining</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">Hx3_se_n</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_spectral</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;welch&#39;</span><span class="p">,</span><span class="n">bining</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="se">\t</span><span class="s1"> Spectral Entropy </span><span class="se">\t</span><span class="s1"> normalized ∈ [0,1]&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x1:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx1_se</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx1_se_n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x2:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx2_se</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx2_se_n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x3:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx3_se</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx3_se_n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>output</p>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text"><strong>Spectral Entropy</strong></span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>x (signal)</p></th>
+<th class="head"><p>in bits</p></th>
+<th class="head"><p>normalized ∈ [0,1]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x1 ~ <span class="math notranslate nohighlight">\(\mathcal{Sin}(10,20,30)\)</span></p></td>
+<td><p>2.784884691460944</p></td>
+<td><p>0.39720359155165325</p></td>
+</tr>
+<tr class="row-odd"><td><p>x2 ~ <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span></p></td>
+<td><p>6.887616844406343</p></td>
+<td><p>0.9823696313956456</p></td>
+</tr>
+<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span></p></td>
+<td><p>6.910233231600092</p></td>
+<td><p>0.9855953700586592</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/spectral_entropy_2.png" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/spectral_entropy_2.png" />
 </div>
 <div class="section" id="approximate-entropy">
 <h3>Approximate Entropy<a class="headerlink" href="#approximate-entropy" title="Permalink to this heading">¶</a></h3>
-<p>Aproximate Entropy is Embeding based entropy function. Rather than considering a signal sample, it consider the <strong>m</strong>-continues samples (a m-deminesional temporal pattern) as a symbol generated from a process. This set of “m-continues samples” is considered as “Embeding” and then estimating distribuation of computed symbols (embeddings). In case of a real valued signal, two embeddings will rarely be an exact match, so, the factor <strong>r</strong> is defined as if two embeddings are less than <strong>r</strong> distance away to each other, they are considered as same. This is a way to quantization of embedding and limiting the Embedding Space.</p>
-<p>For Aproximate Entropy the value of <strong>r</strong> depends the application and the order (range) of signal. One has to keep in mind that <strong>r</strong> is the distance be between two Embeddings (m-deminesional temporal pattern). A typical value of <strong>r</strong> can be estimated on based of SD of x  ~ 0.2*std(x).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_apx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<p>Approximate Entropy is Embedding-based entropy function. Rather than considering a signal sample, it consider the <strong>m</strong>-continues samples (a m-dimensional temporal pattern) as a symbol generated from a process. This set of “m-continues samples” is considered as “Embedding” and then estimating distribution of computed symbols (embeddings). In case of a real valued signal, two embeddings will rarely be an exact match, so, the factor <strong>r</strong> is defined as if two embeddings are less than <strong>r</strong> distance away to each other, they are considered as same. This is a way to quantization of embedding and limiting the Embedding Space.</p>
+<p>For Approximate Entropy the value of <strong>r</strong> depends the application and the order (range) of signal. One has to keep in mind that <strong>r</strong> is the distance be between two Embeddings (m-dimensional temporal pattern). A typical value of <strong>r</strong> can be estimated on based of SD of x  ~ 0.2*std(x).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hx1_apx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+<span class="n">Hx2_apx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+<span class="n">Hx3_apx</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Hx1_apx</span><span class="p">,</span> <span class="n">Hx2_apx</span><span class="p">,</span> <span class="n">Hx3_apx</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.23429427895105137</span><span class="p">,</span> <span class="mf">0.5921334630488566</span><span class="p">,</span> <span class="mf">0.6720444345470105</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="sample-entropy">
 <h3>Sample Entropy<a class="headerlink" href="#sample-entropy" title="Permalink to this heading">¶</a></h3>
 <p>Sample Entropy is a modified version of Approximate Entropy. m and r are same as in for Approximate entropy</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_sam</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hx1_sae</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+<span class="n">Hx2_sae</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span>
+<span class="n">Hx3_sae</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Hx1_sae</span><span class="p">,</span> <span class="n">Hx2_sae</span><span class="p">,</span> <span class="n">Hx3_sae</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.23462714901066314</span><span class="p">,</span> <span class="mf">2.1931512519485836</span><span class="p">,</span> <span class="mf">2.24992380933707</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="approximate-entropy-vs-sample-entropy">
+<h3><strong>Approximate Entropy Vs  Sample Entropy</strong><a class="headerlink" href="#approximate-entropy-vs-sample-entropy" title="Permalink to this heading">¶</a></h3>
+<p>Sample entropy was proposed as the improved version of Approximate entropy, here we can compare both with a small simulation</p>
+<p>First, lets compare the already computed values and time taken by each function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="se">\t</span><span class="s1"> Approx Entropy </span><span class="se">\t</span><span class="s1"> Sample Entropy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="o">*</span><span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x1:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx1_apx</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx1_sae</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x2:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx2_apx</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx2_sae</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;x3:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx3_apx</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">Hx3_sae</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text"><strong>Approximate and Sample Entropy</strong></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>x (signal)</p></th>
+<th class="head"><p>Approximate Entropy</p></th>
+<th class="head"><p>Sample Entropy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x1 ~ <span class="math notranslate nohighlight">\(\mathcal{Sin}(10,20,30)\)</span></p></td>
+<td><p>0.23429427895105137</p></td>
+<td><p>0.23462714901066314</p></td>
+</tr>
+<tr class="row-odd"><td><p>x2 ~ <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span></p></td>
+<td><p>0.5921334630488566</p></td>
+<td><p>2.1931512519485836</p></td>
+</tr>
+<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span></p></td>
+<td><p>0.6720444345470105</p></td>
+<td><p>2.24992380933707</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Compare execution time</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">tt1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+  <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+  <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+  <span class="n">tt1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+
+
+<span class="n">tt2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+  <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+  <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x1</span><span class="p">))</span>
+  <span class="n">tt2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Approx Entropy:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">tt1</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">tt1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sample Entropy:</span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">tt2</span><span class="p">)</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">tt2</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text"><strong>Approximate and Sample Entropy : Time</strong></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Entropy fun</p></th>
+<th class="head"><p>mean</p></th>
+<th class="head"><p>sd</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Approximate Entropy</p></td>
+<td><p>3.11875</p></td>
+<td><p>0.06139</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sample Entropy</p></td>
+<td><p>0.1625</p></td>
+<td><p>0.0159</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>Now, lets compute both entropy values by varies a degree of noise in a signal. This can be done by using a linear combination of x1 and x2, or x1 and x3.</p>
+<div class="math notranslate nohighlight">
+\[x(t) = px1(t) + (1-p)x2
+x(t) = px1(t) + (1-p)x3\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ApSmEn1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ApSmEn2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">SD</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.04</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)):</span>
+ <span class="n">sp</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">ProgBar</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">22</span><span class="p">)</span>
+
+ <span class="n">x41</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="n">p</span><span class="o">*</span><span class="n">x2</span>
+ <span class="n">aprEn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x41</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x41</span><span class="p">))</span>
+ <span class="n">smEn</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x41</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x41</span><span class="p">))</span>
+ <span class="n">ApSmEn1</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">aprEn</span><span class="p">,</span><span class="n">smEn</span><span class="p">])</span>
+
+
+ <span class="n">x42</span> <span class="o">=</span> <span class="n">x1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="n">p</span><span class="o">*</span><span class="n">x3</span>
+ <span class="n">aprEn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_approx</span><span class="p">(</span><span class="n">x42</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x42</span><span class="p">))</span>
+ <span class="n">smEn</span>  <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_sample</span><span class="p">(</span><span class="n">x42</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x42</span><span class="p">))</span>
+ <span class="n">ApSmEn2</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="n">aprEn</span><span class="p">,</span><span class="n">smEn</span><span class="p">])</span>
+
+ <span class="n">SD</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">p</span><span class="p">,</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x41</span><span class="p">),</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x42</span><span class="p">)])</span>
+
+<span class="n">ApSmEn1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ApSmEn1</span><span class="p">)</span>
+<span class="n">ApSmEn2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ApSmEn2</span><span class="p">)</span>
+<span class="n">SD</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">SD</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/approx_sample_entropy_N_2.png" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/approx_sample_entropy_N_2.png" />
+<img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/approx_sample_entropy_U_2.png" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/approx_sample_entropy_U_2.png" />
 </div>
 <div class="section" id="singular-value-decomposition-entropy">
 <h3>Singular Value Decomposition Entropy<a class="headerlink" href="#singular-value-decomposition-entropy" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_svd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_svd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hx1_svd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_svd</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Hx2_svd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_svd</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Hx3_svd</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_svd</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Hx1_svd</span><span class="p">,</span> <span class="n">Hx2_svd</span><span class="p">,</span> <span class="n">Hx3_svd</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>(0.49681180617094506, 1.5847351068262792, 1.584635658386532)</p>
 </div>
 <div class="section" id="permutation-entropy">
 <h3>Permutation Entropy<a class="headerlink" href="#permutation-entropy" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H_prm</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_permutation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hx1_prm</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_permutation</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Hx2_prm</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_permutation</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Hx3_prm</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">entropy_permutation</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Hx1_prm</span><span class="p">,</span> <span class="n">Hx2_prm</span><span class="p">,</span> <span class="n">Hx3_prm</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>(1.3785312756717454, 2.583366627307274, 2.5824960835257484)</p>
+<table class="colwidths-given docutils align-default" id="id4">
+<caption><span class="caption-text"><strong>SVD and Permutation Entropy</strong></span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>x (signal)</p></th>
+<th class="head"><p>SVD Entropy</p></th>
+<th class="head"><p>Permutation Entropy</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x1 ~ <span class="math notranslate nohighlight">\(\mathcal{Sin}(10,20,30)\)</span></p></td>
+<td><p>0.49681180617094506</p></td>
+<td><p>1.3785312756717454</p></td>
+</tr>
+<tr class="row-odd"><td><p>x2 ~ <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span></p></td>
+<td><p>1.5847351068262792</p></td>
+<td><p>2.583366627307274</p></td>
+</tr>
+<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span></p></td>
+<td><p>1.584635658386532</p></td>
+<td><p>2.5824960835257484</p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference external image-reference" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_example.ipynb"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" class="align-right" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" width="100" /></a>
 </div>
 <div class="section" id="dispersion-entropy">
-<h3>Dispersion Entropy<a class="headerlink" href="#dispersion-entropy" title="Permalink to this heading">¶</a></h3>
-<p>check here (<a class="reference external" href="https://spkit.readthedocs.io/en/latest/dispersion_entropy.html">https://spkit.readthedocs.io/en/latest/dispersion_entropy.html</a>)</p>
-<a class="reference external image-reference" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_example.ipynb"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" class="align-right" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" width="100" /></a>
+<h3><strong>Dispersion Entropy</strong><a class="headerlink" href="#dispersion-entropy" title="Permalink to this heading">¶</a></h3>
+<p>For Dispersion Entropy, check the next section</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="eeg-signal">
-<h2>EEG Signal<a class="headerlink" href="#eeg-signal" title="Permalink to this heading">¶</a></h2>
-<div class="section" id="id3">
-<h3><a class="reference external" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_EEG_Example.ipynb">View in Jupyter-Notebook</a><a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h3>
+<div class="section" id="examples-with-eeg-signal">
+<h2><strong>Examples with EEG Signal</strong><a class="headerlink" href="#examples-with-eeg-signal" title="Permalink to this heading">¶</a></h2>
+<blockquote>
+<div></div></blockquote>
 <a class="reference external image-reference" href="https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Entropy_EEG_Example.ipynb"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" class="align-right" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" width="200" /></a>
-</div>
 <div class="section" id="single-channel">
 <h3>Single Channel<a class="headerlink" href="#single-channel" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -457,26 +715,27 @@ Kullback–Leibler divergence : Dkl(x,y) = : 4.203058010473213
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Information Theory for Real-Valued signals</a><ul>
-<li><a class="reference internal" href="#entropy-of-real-valued-signal-iid">Entropy of real-valued signal  (~ IID)</a><ul>
-<li><a class="reference internal" href="#id1">View in Jupyter-Notebook</a></li>
+<li><a class="reference internal" href="#entropy-of-real-valued-signal-iid"><strong>Entropy of real-valued signal  (~ IID)</strong></a><ul>
 <li><a class="reference internal" href="#shannan-entropy">Shannan entropy</a></li>
-<li><a class="reference internal" href="#renyi-entropy-e-g-collision-entropy">Rényi entropy  (e.g. Collision Entropy)</a></li>
-<li><a class="reference internal" href="#mutual-information-joint-entropy">Mutual Information &amp; Joint Entropy</a></li>
+<li><a class="reference internal" href="#renyi-entropy">Rényi entropy</a></li>
+<li><a class="reference internal" href="#mutual-information">Mutual Information</a></li>
+<li><a class="reference internal" href="#joint-entropy">Joint Entropy</a></li>
 <li><a class="reference internal" href="#conditional-entropy">Conditional entropy</a></li>
-<li><a class="reference internal" href="#cross-entropy-kullbackleibler-divergence">Cross entropy &amp; Kullback–Leibler divergence</a></li>
+<li><a class="reference internal" href="#cross-entropy">Cross entropy</a></li>
+<li><a class="reference internal" href="#kullbackleibler-divergence">Kullback–Leibler divergence</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#entropy-of-real-valued-signal-non-iid">Entropy of real-valued signal  (~ non-IID)</a><ul>
+<li><a class="reference internal" href="#entropy-of-real-valued-signal-non-iid"><strong>Entropy of real-valued signal  (~ non-IID)</strong></a><ul>
 <li><a class="reference internal" href="#spectral-entropy">Spectral Entropy</a></li>
 <li><a class="reference internal" href="#approximate-entropy">Approximate Entropy</a></li>
 <li><a class="reference internal" href="#sample-entropy">Sample Entropy</a></li>
+<li><a class="reference internal" href="#approximate-entropy-vs-sample-entropy"><strong>Approximate Entropy Vs  Sample Entropy</strong></a></li>
 <li><a class="reference internal" href="#singular-value-decomposition-entropy">Singular Value Decomposition Entropy</a></li>
 <li><a class="reference internal" href="#permutation-entropy">Permutation Entropy</a></li>
-<li><a class="reference internal" href="#dispersion-entropy">Dispersion Entropy</a></li>
+<li><a class="reference internal" href="#dispersion-entropy"><strong>Dispersion Entropy</strong></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#eeg-signal">EEG Signal</a><ul>
-<li><a class="reference internal" href="#id3">View in Jupyter-Notebook</a></li>
+<li><a class="reference internal" href="#examples-with-eeg-signal"><strong>Examples with EEG Signal</strong></a><ul>
 <li><a class="reference internal" href="#single-channel">Single Channel</a></li>
 <li><a class="reference internal" href="#multi-channels-cross">Multi-Channels (cross)</a></li>
 </ul>
@@ -489,12 +748,12 @@ Kullback–Leibler divergence : Dkl(x,y) = : 4.203058010473213
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="installation.html"
-                          title="previous chapter"><strong>Links:</strong></a></p>
+                          title="previous chapter">Getting Started</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
     <p class="topless"><a href="dispersion_entropy.html"
-                          title="next chapter">Dispersion Entropy</a></p>
+                          title="next chapter"><strong>Dispersion Entropy</strong></a></p>
   </div><div>
 <h3>Quick links</h3>
 <ul>
@@ -531,15 +790,15 @@ Kullback–Leibler divergence : Dkl(x,y) = : 4.203058010473213
           <a href="dispersion_entropy.html" title="Dispersion Entropy"
              >next</a> |</li>
         <li class="right" >
-          <a href="installation.html" title="Links:"
+          <a href="installation.html" title="Getting Started"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Information Theory for Real-Valued signals</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019-2022, Nikesh Bajaj.
-      Last updated on Nov 12, 2022.
+      Last updated on Nov 13, 2022.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>

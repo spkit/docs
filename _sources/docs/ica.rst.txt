@@ -1,5 +1,6 @@
-Independent Component Analysis - ICA
-----------
+=====================================
+**Independent Component Analysis - ICA**
+=====================================
 
 `View in Jupyter-Notebook <https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/ICA_EEG_example.ipynb>`_
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -9,10 +10,10 @@ Independent Component Analysis - ICA
    :align: right
    :target: https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/ICA_EEG_example.ipynb
 
------------   
+-----------
 
 ::
-  
+
   import numpy as np
   import matplotlib.pyplot as plt
   from spkit import ICA
@@ -61,8 +62,8 @@ Independent Component Analysis - ICA
       plt.title(methods[i])
 
   plt.show()
-  
- 
+
+
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/eeg_ica_4.png
 
 
@@ -71,7 +72,4 @@ Independent Component Analysis - ICA
    :align: right
    :target: https://nbviewer.jupyter.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/ICA_EEG_example.ipynb
 
------------   
- 
-  
-  
+-----------

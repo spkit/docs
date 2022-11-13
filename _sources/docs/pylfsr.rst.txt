@@ -1,14 +1,19 @@
-Link to pylfsr documentation
+**LFSR: pylfsr documentation**
 ---------------------------
 
-**Example: 5 bit LFSR with x^5 + x^2 + 1**
+A full details of pylfsr is separately built - check here https://lfsr.readthedocs.io/
+
+`Check out full documentation of LFSR** <https://lfsr.readthedocs.io>`_
+~~~~~~~~~~~~~~~~~
+
+Example: 5 bit LFSR with x^5 + x^2 + 1
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
   import numpy as np
   from spkit.pylfsr import LFSR
-  
+
   L = LFSR()
   L.info()
   L.next()

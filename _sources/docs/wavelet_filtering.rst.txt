@@ -1,5 +1,6 @@
-Wavelet Filtering
-=================
+=====================
+**Wavelet Filtering**
+=====================
 
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg
    :width: 200
@@ -10,7 +11,7 @@ Wavelet Filtering
 
 **Background**
 ----------------
-Other than classical frequency filtering, Wavelet filtering is one of common techniques used in signal processing. It allows to filter out short-time duration patterns captured by used wavelet. The patterns to be filtered out depends on the wavelet family (e.g. *db3*) used and number of level of decomposition. 
+Other than classical frequency filtering, Wavelet filtering is one of common techniques used in signal processing. It allows to filter out short-time duration patterns captured by used wavelet. The patterns to be filtered out depends on the wavelet family (e.g. *db3*) used and number of level of decomposition.
 
 Algorithmically, it is very straightforward. Decompose a signal :math:`x(n)`, into wavelet coefficients :math:`X(k)`, where each coefficient represents the strength of wavelet pattern at particular time. With some threshold, remove the coefficients by zeroing out and reconstruct the signal back.
 
@@ -21,14 +22,14 @@ Literature [1] suggest the **optimal threshold** on the wavelet coeffiecient is
 
 
 .. math::
-  
+
   \theta = \tilde{\sigma} \sqrt{2log(N)}
-  
+
 where :math:`\tilde{\sigma}` is estimation of noise variance and :math:`N` length of signal
 
 
 .. math::
-  
+
   \tilde{\sigma} = median(|X(k)|)/0.6745
 
 and :math:`X(k)` are wavelet coeffients of :math:`x(n)`
@@ -60,30 +61,30 @@ There are a few more options to tune threshold and mode of filtering. For more d
 Example
 ----------------
 ::
-  
+
   import numpy as np
   import matplotlib.pyplot as plt
   import spkit as sp
   print('spkit version',sp.__version__)
-  
+
   x,fs = sp.load_data.eegSample_1ch()
   x = x[fs*2:fs*8]
   t = np.arange(len(x))/fs
-  
+
   plt.figure(figsize=(15,3))
   plt.plot(t,x)
   plt.xlim([t[0],t[-1]])
   plt.grid()
   plt.xlabel('time (s)')
   plt.show()
-  
+
 'spkit version 0.0.9.4'
-  
+
 .. image:: https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/signal_1.png
-  
-  
+
+
 ::
-  
+
   xf = sp.wavelet_filtering(x.copy(),wv='db3',threshold='optimal',verbose=1,WPD=False,show=True,fs=fs)
 
 WPD: False  wv: db3  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: True
@@ -96,11 +97,11 @@ WPD: False  wv: db3  threshold: optimal  k: 1.5  mode: elim  filter_out_below?: 
 
 `View in Jupyter-Notebook for details and more examples <https://nbviewer.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Wavelet_Filtering_1_demo.ipynb>`_
 ----------------
-  
-  
+
+
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg
    :width: 100
    :align: right
    :target: https://nbviewer.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Wavelet_Filtering_1_demo.ipynb
 
------------   
+-----------

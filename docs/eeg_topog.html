@@ -5,11 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EEG Topographic Maps &#8212; SpKit</title>
+    <title>EEG Topographic Maps &#8212; Documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/_static/css/basic.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -18,7 +17,7 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within SpKit"
+          title="Search within Documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/spkitlogo7.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,7 +77,7 @@
 
     </script>
 
-<script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript">
   (function($) {
       $(function() {
@@ -115,7 +114,7 @@
               .jcarouselPagination();
       });
   })(jQuery);
-  </script>
+  </script> -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -138,17 +137,31 @@
 
 
   <div class=related-wrapper>
-    <div class="related" role="navigation" aria-label="related navigation" background-color="#ffff">
+    <div class="related" role="navigation" aria-label="related navigation">
     <ul>
     <li><a href="https://spkit.github.io">Home</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">User Guide</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Examples</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Tutorials</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Updates</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">About</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/userguide">User Guide</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/docs">Documentation</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/examples">Examples</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/tutorials">Tutorials</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/updates">Updates</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/about">About</a> |&nbsp;</li>
+    <li class="right" style="margin-right: 20px"><a href="#">Back to top</a> |&nbsp;</li>
+    <li class="right"><a href=".././py-modindex.html" title="Python Modele Index">module</a> |&nbsp;</li>
+    <li class="right"><a href=".././genindex.html" title="General Index" accesskey="I">index</a> |&nbsp;</li>
     </ul>
     </div>
   </div>
+  <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59299155-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-59299155-3');
+  </script>
 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -166,8 +179,8 @@
         <li class="right" >
           <a href="ica.html" title="Independent Component Analysis - ICA"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">EEG Topographic Maps</a></li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>EEG Topographic Maps</strong></a></li> 
       </ul>
     </div>  
 
@@ -177,9 +190,9 @@
           <div class="body" role="main">
             
   <div class="section" id="eeg-topographic-maps">
-<h1>EEG Topographic Maps<a class="headerlink" href="#eeg-topographic-maps" title="Permalink to this heading">¶</a></h1>
+<h1><strong>EEG Topographic Maps</strong><a class="headerlink" href="#eeg-topographic-maps" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="spatio-temporal-map">
-<h2>Spatio-Temporal Map<a class="headerlink" href="#spatio-temporal-map" title="Permalink to this heading">¶</a></h2>
+<h2><strong>Spatio-Temporal Map</strong><a class="headerlink" href="#spatio-temporal-map" title="Permalink to this heading">¶</a></h2>
 <p>At t=0, X[0]</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">spkit</span> <span class="k">as</span> <span class="nn">sp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -223,7 +236,7 @@
 <img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_topo_sqr_2.png" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_topo_sqr_2.png" />
 </div>
 <div class="section" id="spatio-spectral-map">
-<h2>Spatio-Spectral Map<a class="headerlink" href="#spatio-spectral-map" title="Permalink to this heading">¶</a></h2>
+<h2><strong>Spatio-Spectral Map</strong><a class="headerlink" href="#spatio-spectral-map" title="Permalink to this heading">¶</a></h2>
 <p><strong>For Three different frequency Bands</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fBands</span> <span class="o">=</span><span class="p">[[</span><span class="mi">4</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">8</span><span class="p">,</span><span class="mi">14</span><span class="p">]]</span>
 <span class="n">Px</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">RhythmicDecomposition</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">fs</span><span class="o">=</span><span class="mf">128.0</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">Sum</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">Mean</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">SD</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">fBands</span><span class="o">=</span><span class="n">fBands</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -248,7 +261,7 @@
 <img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_ssfi_1.png" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_ssfi_1.png" />
 </div>
 <div class="section" id="spatio-spectro-temporal-map">
-<h2>Spatio-Spectro-Temporal Map<a class="headerlink" href="#spatio-spectro-temporal-map" title="Permalink to this heading">¶</a></h2>
+<h2><strong>Spatio-Spectro-Temporal Map</strong><a class="headerlink" href="#spatio-spectro-temporal-map" title="Permalink to this heading">¶</a></h2>
 <p><strong>Spatio-Spectral Map</strong></p>
 <p>According to Parseval’s theorem, energy in time-domain and frequency domain remain same, so computing total power at each channel for 1 sec with 0.5 overlapping</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">notebook</span>
@@ -292,10 +305,10 @@
   <div>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">EEG Topographic Maps</a><ul>
-<li><a class="reference internal" href="#spatio-temporal-map">Spatio-Temporal Map</a></li>
-<li><a class="reference internal" href="#spatio-spectral-map">Spatio-Spectral Map</a></li>
-<li><a class="reference internal" href="#spatio-spectro-temporal-map">Spatio-Spectro-Temporal Map</a></li>
+<li><a class="reference internal" href="#"><strong>EEG Topographic Maps</strong></a><ul>
+<li><a class="reference internal" href="#spatio-temporal-map"><strong>Spatio-Temporal Map</strong></a></li>
+<li><a class="reference internal" href="#spatio-spectral-map"><strong>Spatio-Spectral Map</strong></a></li>
+<li><a class="reference internal" href="#spatio-spectro-temporal-map"><strong>Spatio-Spectro-Temporal Map</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -304,7 +317,7 @@
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="ica.html"
-                          title="previous chapter">Independent Component Analysis - ICA</a></p>
+                          title="previous chapter"><strong>Independent Component Analysis - ICA</strong></a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -348,13 +361,13 @@
         <li class="right" >
           <a href="ica.html" title="Independent Component Analysis - ICA"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">EEG Topographic Maps</a></li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>EEG Topographic Maps</strong></a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019-2022, Nikesh Bajaj.
-      Last updated on Nov 12, 2022.
+      Last updated on Nov 13, 2022.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>

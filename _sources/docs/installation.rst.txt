@@ -1,22 +1,21 @@
-**Links:**
------
-
-* **Homepage**   - http://spkit.github.io
-* **Documentation** - https://spkit.readthedocs.io
-* **Github**	    - https://github.com/Nikeshbajaj/spkit
-* **PyPi-project**  - https://pypi.org/project/spkit
-* **Installation:** *pip install spkit*
-
+Getting Started
+================
 
 **Installation**
----------
+---------------------------
 
-**Requirement** : *numpy*,  *matplotlib*
+Installing spkit is very easy and simple.
 
-**With pip:**
+The basic requirement for spkit is numpy and matplotlib, however for a few functionalities, CVXpy is required. By default, spkit will only install basic requirements, as cvxpy has os related dependencies.
+
+**Basic Requirement** : *numpy*,  *matplotlib*
+
+**Advance Requirement** : *cvxpy*
+
+Installing with **pip**
 
 ::
-  
+
   pip install spkit
 
 
@@ -27,3 +26,16 @@ Download the repository or clone it with git, after cd in directory build it fro
 ::
 
   python setup.py install
+
+
+
+**Helpful Links:**
+-----------------------------
+
+  * **Homepage**   - http://spkit.github.io
+  * **Documentation** - https://spkit.readthedocs.io
+  * **Documentation in page** - http://spkit.github.io/docs
+  * **Example Gallery in page** - http://spkit.github.io/examples
+  * **Github**	    - https://github.com/Nikeshbajaj/spkit
+  * **PyPi-project**  - https://pypi.org/project/spkit
+  * **Installation:** *pip install spkit*

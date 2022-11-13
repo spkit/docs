@@ -5,11 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dispersion Entropy &#8212; SpKit</title>
+    <title>Dispersion Entropy &#8212; Documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/_static/css/basic.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -19,7 +18,7 @@
     <script src="../_static/design-tabs.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within SpKit"
+          title="Search within Documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/spkitlogo7.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -79,7 +78,7 @@
 
     </script>
 
-<script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript">
   (function($) {
       $(function() {
@@ -116,7 +115,7 @@
               .jcarouselPagination();
       });
   })(jQuery);
-  </script>
+  </script> -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -139,17 +138,31 @@
 
 
   <div class=related-wrapper>
-    <div class="related" role="navigation" aria-label="related navigation" background-color="#ffff">
+    <div class="related" role="navigation" aria-label="related navigation">
     <ul>
     <li><a href="https://spkit.github.io">Home</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">User Guide</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Examples</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Tutorials</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Updates</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">About</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/userguide">User Guide</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/docs">Documentation</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/examples">Examples</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/tutorials">Tutorials</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/updates">Updates</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/about">About</a> |&nbsp;</li>
+    <li class="right" style="margin-right: 20px"><a href="#">Back to top</a> |&nbsp;</li>
+    <li class="right"><a href=".././py-modindex.html" title="Python Modele Index">module</a> |&nbsp;</li>
+    <li class="right"><a href=".././genindex.html" title="General Index" accesskey="I">index</a> |&nbsp;</li>
     </ul>
     </div>
   </div>
+  <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59299155-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-59299155-3');
+  </script>
 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -167,8 +180,8 @@
         <li class="right" >
           <a href="informationtheory.html" title="Information Theory for Real-Valued signals"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Dispersion Entropy</a></li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Dispersion Entropy</strong></a></li> 
       </ul>
     </div>  
 
@@ -178,11 +191,11 @@
           <div class="body" role="main">
             
   <div class="section" id="dispersion-entropy">
-<h1>Dispersion Entropy<a class="headerlink" href="#dispersion-entropy" title="Permalink to this heading">¶</a></h1>
+<h1><strong>Dispersion Entropy</strong><a class="headerlink" href="#dispersion-entropy" title="Permalink to this heading">¶</a></h1>
 <a class="reference external image-reference" href="https://nbviewer.org/github/Nikeshbajaj/Notebooks/blob/master/spkit/SP/Dispersion_Entropy_1_demo_EEG.ipynb"><img alt="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" class="align-right" src="https://raw.githubusercontent.com/spkit/spkit.github.io/master/assets/images/nav_logo.svg" width="200" /></a>
 <hr class="docutils" />
-<div class="section" id="backgorund">
-<h2>Backgorund<a class="headerlink" href="#backgorund" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this heading">¶</a></h2>
 <p>Unlike usual entropy, Dispersion Entropy take the temporal dependency into accounts, same as Sample Entropy and Aproximate Entropy. It is Embeding Based Entropy function. The idea of Dispersion is almost same as Sample and Aproximate, which is to extract Embeddings, estimate their distribuation and compute entropy. However, there is a fine detail that make dispersion entropy more usuful.</p>
 <ul class="simple">
 <li><p>First, is to map the distribuation original signal to uniform (using CDF), then divide them into n-classes. This is same as done for quantization process of any normally distributed signal, such as speech. In quantization, this mapping helps to minimize the quantization error, by assiging small quantization steps for samples with high density and large for low. Think this in a way, if in a signal, large number of samples belongs to a range (-0.1, 0.1), near to zero, your almost all the embeddings will have at least one value that is in that range. CDF mapping will avoid that. In this python implimentation, we have included other mapping functions, which are commonly used in speech processing, i.e. A-Law, and µ-Law, with parameter A and µ to control the mapping.</p></li>
@@ -209,13 +222,17 @@
 </pre></div>
 </div>
 <p>2.271749287746759</p>
-<div class="section" id="important-note-log-base">
-<h3>Important Note:  <strong>Log base</strong><a class="headerlink" href="#important-note-log-base" title="Permalink to this heading">¶</a></h3>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Important Note on Log base
+check following note</p>
+<p><strong>Important Note:  Log base</strong></p>
 <p>The Entropy here is computed as  <span class="math notranslate nohighlight">\(-\sum p(x)log_e (p(x))\)</span> , natural log. <strong>To convert to log2, simply divide the value with np.log(2)</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">de</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>3.2774414315752844</p>
+</div>
 <p><strong>Probability of all the patterns found</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">prob</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;pattern #&#39;</span><span class="p">)</span>
@@ -258,9 +275,8 @@
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="embedding-diamension-4">
-<h2>Embedding diamension 4<a class="headerlink" href="#embedding-diamension-4" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="embedding-dimension-4">
+<h2>Embedding dimension 4<a class="headerlink" href="#embedding-dimension-4" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">de</span><span class="p">,</span><span class="n">prob</span><span class="p">,</span><span class="n">patterns_dict</span><span class="p">,</span><span class="n">_</span><span class="p">,</span><span class="n">_</span><span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">dispersion_entropy</span><span class="p">(</span><span class="n">Xi</span><span class="p">,</span><span class="n">classes</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">emb_dim</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">return_all</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">de</span>
 </pre></div>
@@ -371,13 +387,10 @@
   <div>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">Dispersion Entropy</a><ul>
-<li><a class="reference internal" href="#backgorund">Backgorund</a></li>
-<li><a class="reference internal" href="#an-example">An Example</a><ul>
-<li><a class="reference internal" href="#important-note-log-base">Important Note:  <strong>Log base</strong></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#embedding-diamension-4">Embedding diamension 4</a></li>
+<li><a class="reference internal" href="#"><strong>Dispersion Entropy</strong></a><ul>
+<li><a class="reference internal" href="#background">Background</a></li>
+<li><a class="reference internal" href="#an-example">An Example</a></li>
+<li><a class="reference internal" href="#embedding-dimension-4">Embedding dimension 4</a></li>
 <li><a class="reference internal" href="#dispersion-entropy-with-sliding-window">Dispersion Entropy with sliding window</a></li>
 <li><a class="reference internal" href="#dispersion-entropy-multiscale">Dispersion Entropy multiscale</a></li>
 <li><a class="reference internal" href="#mltiscale-refined-dispersion-entropy">Mltiscale-refined Dispersion Entropy</a></li>
@@ -395,7 +408,7 @@
   <div>
     <h4>Next topic</h4>
     <p class="topless"><a href="atar_algo.html"
-                          title="next chapter">ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG</a></p>
+                          title="next chapter"><strong>ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG</strong></a></p>
   </div><div>
 <h3>Quick links</h3>
 <ul>
@@ -434,13 +447,13 @@
         <li class="right" >
           <a href="informationtheory.html" title="Information Theory for Real-Valued signals"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Dispersion Entropy</a></li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Dispersion Entropy</strong></a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019-2022, Nikesh Bajaj.
-      Last updated on Nov 12, 2022.
+      Last updated on Nov 13, 2022.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>

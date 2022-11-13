@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
   <ShortName>SpKit</ShortName>
-  <Description>Search SpKit</Description>
+  <Description>Search Documentation</Description>
   <InputEncoding>utf-8</InputEncoding>
   <Url type="text/html" method="get"
-       template="http://spkit-doc.readthedocs.org/search.html?q={searchTerms}"/>
-  <LongName>SpKit</LongName>
-  <Image height="16" width="16" type="image/x-icon">http://spkit-doc.readthedocs.org/_static/spkitlogo7.ico</Image>
+       template="http://spkit.github.io/docs/search.html?q={searchTerms}"/>
+  <LongName>Documentation</LongName>
+  <Image height="16" width="16" type="image/x-icon">http://spkit.github.io/docs/_static/spkitlogo7.ico</Image>
   
 </OpenSearchDescription>

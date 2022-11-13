@@ -1,13 +1,14 @@
-EEG Topographic Maps
--------------
-  
-Spatio-Temporal Map 
-~~~~~~~~~~~~~~~~~~~
+=====================================
+**EEG Topographic Maps**
+=====================================
+
+**Spatio-Temporal Map**
+------------------------
 
 At t=0, X[0]
 
 ::
-  
+
   import spkit as sp
   import matplotlib.pyplot as plt
 
@@ -17,13 +18,13 @@ At t=0, X[0]
   Zi = sp.eeg.TopoMap(pos,X[0],res=128, showplot=True,axes=None,contours=True,showsensors=True,
               interpolation=None,shownames=True, ch_names=ch_names,showhead=True,vmin=None,vmax=None,
               returnIm = False,fontdict=None)
-  plt.show()    
-  
+  plt.show()
+
 
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_topo_1.png
 
 ::
-  
+
   plt.imshow(Zi,cmap='jet',origin='lower')
 
 
@@ -33,7 +34,7 @@ At t=0, X[0]
 **With Colorbar as voltage**
 
 ::
-  
+
   import numpy as np
   import matplotlib.pyplot as plt
   import spkit as sp
@@ -46,27 +47,27 @@ At t=0, X[0]
               returnIm = True,fontdict=None)
 
   plt.colorbar(im)
-  plt.show()    
+  plt.show()
 
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_topo_2.png
 
 
 ::
-   
+
   im = plt.imshow(Zi,cmap='jet',origin='lower')
   plt.colorbar(im)
-  plt.show() 
+  plt.show()
 
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_topo_sqr_2.png
 
 
-Spatio-Spectral Map 
-~~~~~~~~~~~~~~~~~~~
+**Spatio-Spectral Map**
+------------------------
 
 **For Three different frequency Bands**
 
 ::
-  
+
   fBands =[[4],[4,8],[8,14]]
   Px = sp.eeg.RhythmicDecomposition(X,fs=128.0,order=5,Sum=True,Mean=False,SD=False,fBands=fBands)[0]
   Px = 10*np.log10(Px)
@@ -91,8 +92,8 @@ Spatio-Spectral Map
 .. image:: https://raw.githubusercontent.com/spkit/spkit.github.io/master/examples/figures/eeg_ssfi_1.png
 
 
-Spatio-Spectro-Temporal Map
-~~~~~~~~~~~~~~~~~~~
+**Spatio-Spectro-Temporal Map**
+------------------------
 
 **Spatio-Spectral Map**
 
@@ -100,7 +101,7 @@ According to Parseval's theorem, energy in time-domain and frequency domain rema
 
 
 ::
-  
+
   %matplotlib notebook
   N = 128
   skip = 32

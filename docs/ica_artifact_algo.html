@@ -5,11 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blind Source Seperation - ICA Based Artifact Removal &#8212; SpKit</title>
+    <title>Blind Source Separation - ICA Based Artifact Removal &#8212; Documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/nature.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/_static/css/basic.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
@@ -18,7 +17,7 @@
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/design-tabs.js"></script>
     <link rel="search" type="application/opensearchdescription+xml"
-          title="Search within SpKit"
+          title="Search within Documentation"
           href="../_static/opensearch.xml"/>
     <link rel="shortcut icon" href="../_static/spkitlogo7.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -78,7 +77,7 @@
 
     </script>
 
-<script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
+<!-- <script type="text/javascript" src="../assets/js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript">
   (function($) {
       $(function() {
@@ -115,7 +114,7 @@
               .jcarouselPagination();
       });
   })(jQuery);
-  </script>
+  </script> -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -138,17 +137,31 @@
 
 
   <div class=related-wrapper>
-    <div class="related" role="navigation" aria-label="related navigation" background-color="#ffff">
+    <div class="related" role="navigation" aria-label="related navigation">
     <ul>
     <li><a href="https://spkit.github.io">Home</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">User Guide</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Examples</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Tutorials</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">Updates</a> |&nbsp;</li>
-    <li><a href="https://spkit.github.io">About</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/userguide">User Guide</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/docs">Documentation</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/examples">Examples</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/tutorials">Tutorials</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/updates">Updates</a> |&nbsp;</li>
+    <li><a href="https://spkit.github.io/about">About</a> |&nbsp;</li>
+    <li class="right" style="margin-right: 20px"><a href="#">Back to top</a> |&nbsp;</li>
+    <li class="right"><a href=".././py-modindex.html" title="Python Modele Index">module</a> |&nbsp;</li>
+    <li class="right"><a href=".././genindex.html" title="General Index" accesskey="I">index</a> |&nbsp;</li>
     </ul>
     </div>
   </div>
+  <link href="../_static/style.css" rel="stylesheet" type="text/css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59299155-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-59299155-3');
+  </script>
 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -166,8 +179,8 @@
         <li class="right" >
           <a href="atar_algo.html" title="ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Blind Source Seperation - ICA Based Artifact Removal</a></li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Blind Source Separation - ICA Based Artifact Removal</strong></a></li> 
       </ul>
     </div>  
 
@@ -176,8 +189,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="blind-source-seperation-ica-based-artifact-removal">
-<h1>Blind Source Seperation - ICA Based Artifact Removal<a class="headerlink" href="#blind-source-seperation-ica-based-artifact-removal" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="blind-source-separation-ica-based-artifact-removal">
+<h1><strong>Blind Source Separation - ICA Based Artifact Removal</strong><a class="headerlink" href="#blind-source-separation-ica-based-artifact-removal" title="Permalink to this heading">¶</a></h1>
 <div class="section" id="notebook">
 <h2>Notebook<a class="headerlink" href="#notebook" title="Permalink to this heading">¶</a></h2>
 <div class="section" id="id1">
@@ -271,8 +284,8 @@ corr_thr: (deafult 0.8) threshold to consider correlation, higher the value less
 </div>
 <img alt="https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/ica_eeg_artifact_ex1.png" src="https://raw.githubusercontent.com/Nikeshbajaj/spkit/master/figures/ica_eeg_artifact_ex1.png" />
 </div>
-<div class="section" id="with-smallar-segment">
-<h2>With smallar segment<a class="headerlink" href="#with-smallar-segment" title="Permalink to this heading">¶</a></h2>
+<div class="section" id="with-smaller-segment">
+<h2>With smaller segment<a class="headerlink" href="#with-smaller-segment" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Xf1</span> <span class="o">=</span> <span class="n">Xf</span><span class="p">[</span><span class="mi">128</span><span class="o">*</span><span class="mi">10</span><span class="p">:</span><span class="mi">128</span><span class="o">*</span><span class="mi">14</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="n">XR1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">eeg</span><span class="o">.</span><span class="n">ICA_filtering</span><span class="p">(</span><span class="n">Xf1</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">kur_thr</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">corr_thr</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span><span class="n">winsize</span><span class="o">=</span><span class="mi">128</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
@@ -319,13 +332,13 @@ corr_thr: (deafult 0.8) threshold to consider correlation, higher the value less
   <div>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
-<li><a class="reference internal" href="#">Blind Source Seperation - ICA Based Artifact Removal</a><ul>
+<li><a class="reference internal" href="#"><strong>Blind Source Separation - ICA Based Artifact Removal</strong></a><ul>
 <li><a class="reference internal" href="#notebook">Notebook</a><ul>
 <li><a class="reference internal" href="#id1">View in Jupyter-Notebook</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#a-quick-example">A quick example</a></li>
-<li><a class="reference internal" href="#with-smallar-segment">With smallar segment</a></li>
+<li><a class="reference internal" href="#with-smaller-segment">With smaller segment</a></li>
 </ul>
 </li>
 </ul>
@@ -334,12 +347,12 @@ corr_thr: (deafult 0.8) threshold to consider correlation, higher the value less
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="atar_algo.html"
-                          title="previous chapter">ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG</a></p>
+                          title="previous chapter"><strong>ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG</strong></a></p>
   </div>
   <div>
     <h4>Next topic</h4>
     <p class="topless"><a href="cwt.html"
-                          title="next chapter">Complex Wavelets</a></p>
+                          title="next chapter"><strong>Complex Wavelets</strong></a></p>
   </div><div>
 <h3>Quick links</h3>
 <ul>
@@ -378,13 +391,13 @@ corr_thr: (deafult 0.8) threshold to consider correlation, higher the value less
         <li class="right" >
           <a href="atar_algo.html" title="ATAR - Automatic and Tunable Artifact Removal Algorithm for EEG"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">SpKit</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Blind Source Seperation - ICA Based Artifact Removal</a></li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>Blind Source Separation - ICA Based Artifact Removal</strong></a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019-2022, Nikesh Bajaj.
-      Last updated on Nov 12, 2022.
+      Last updated on Nov 13, 2022.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
     </div>
   </body>

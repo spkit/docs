@@ -317,7 +317,7 @@ Conditional Entropy of : H(y|x) =  4.9816745398211655</p>
 <ul class="simple">
 <li><p>x1 ~ <span class="math notranslate nohighlight">\(cos(2\pi 10t)+cos(2\pi 20t)+cos(2\pi 30t)\)</span>   - sinasodal signal with three frequency componets</p></li>
 <li><p>x2 ~ <span class="math notranslate nohighlight">\(\mathcal{N}(0,1)\)</span> -  random gaussian signal with zero mean and sd=1</p></li>
-<li><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span> -  random signal with uniform distribution ranges from 0 to 1</p></li>
+<li><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(-0.5, 0.5)\)</span> -  random signal with uniform distribution ranges from -0.5 to 0.5, zero mean</p></li>
 </ul>
 <div class="section" id="spectral-entropy">
 <h3>Spectral Entropy<a class="headerlink" href="#spectral-entropy" title="Permalink to this heading">¶</a></h3>
@@ -371,7 +371,7 @@ Conditional Entropy of : H(y|x) =  4.9816745398211655</p>
 <td><p>6.887616844406343</p></td>
 <td><p>0.9823696313956456</p></td>
 </tr>
-<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span></p></td>
+<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(-0.5,0.5)\)</span></p></td>
 <td><p>6.910233231600092</p></td>
 <td><p>0.9855953700586592</p></td>
 </tr>
@@ -440,7 +440,7 @@ Conditional Entropy of : H(y|x) =  4.9816745398211655</p>
 <td><p>0.5921334630488566</p></td>
 <td><p>2.1931512519485836</p></td>
 </tr>
-<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span></p></td>
+<tr class="row-even"><td><p>x3 ~ <span class="math notranslate nohighlight">\(\mathcal{U}(-0.5, 0.5)\)</span></p></td>
 <td><p>0.6720444345470105</p></td>
 <td><p>2.24992380933707</p></td>
 </tr>
@@ -496,10 +496,10 @@ Conditional Entropy of : H(y|x) =  4.9816745398211655</p>
 </div></blockquote>
 <p>Now, lets compute both entropy values by varies a degree of noise in a signal. This can be done by using a linear combination of x1 and x2, or x1 and x3.</p>
 <div class="math notranslate nohighlight">
-\[x(t) = px1(t) + (1-p)x2\]</div>
+\[x(t) = px1(t) + (1-p)x2(t)\]</div>
 
 <div class="math notranslate nohighlight">
-\[x(t) = px1(t) + (1-p)x3\]</div>
+\[x(t) = px1(t) + (1-p)x3(t)\]</div>
   
   
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ApSmEn1</span> <span class="o">=</span> <span class="p">[]</span>

@@ -24,8 +24,9 @@ div.section::after {
 /* -- relbar ---------------------------------------------------------------- */
 
 div.related {
-    width: 100%;
-    font-size: 90%;
+    /* width: 100%; */
+    /* font-size: 90%; */
+    font-size: 0.9em;
 }
 
 div.related h3 {
@@ -878,6 +879,13 @@ span.eqno a.headerlink {
 
 div.math:hover a.headerlink {
     visibility: visible;
+}
+
+
+@media(max-width:1343px){
+    div.sphinxsidebarwrapper{
+        display:none;
+    }
 }
 
 /* -- printout stylesheet --------------------------------------------------- */
